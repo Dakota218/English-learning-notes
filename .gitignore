@@ -1,0 +1,10 @@
+.DS_Store
+~$*.docx
+*.tmp
+
+# Local render/check artifacts
+*.pdf
+*.png
+
+# Optional local backups created before large updates
+backups/

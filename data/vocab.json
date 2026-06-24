@@ -1,0 +1,233 @@
+[
+  {
+    "id": "2026-06-24-book-an-airport-transfer",
+    "date": "2026-06-24",
+    "expression": "book an airport transfer",
+    "type": "collocation",
+    "meaning_zh": "預約機場接送",
+    "example": "I booked an airport transfer so we would not have to look for a taxi after the long flight.",
+    "note_zh": "常用於旅遊或飯店安排，transfer 指從機場到飯店或目的地的接送服務。",
+    "tags": [
+      "daily",
+      "travel",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-head-to-the-check-in-counter",
+    "date": "2026-06-24",
+    "expression": "head to the check-in counter",
+    "type": "phrase",
+    "meaning_zh": "前往報到櫃台",
+    "example": "After arriving at the airport, we headed to the check-in counter to drop off our bags.",
+    "note_zh": "head to 表示「前往」，語氣自然口語；check-in counter 是機場或飯店的報到櫃台。",
+    "tags": [
+      "daily",
+      "travel",
+      "conversation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-long-haul-flight",
+    "date": "2026-06-24",
+    "expression": "long-haul flight",
+    "type": "noun",
+    "meaning_zh": "長途飛行",
+    "example": "A neck pillow can make a long-haul flight much more comfortable.",
+    "note_zh": "long-haul 通常指長距離交通，最常搭配 flight，也可見於 long-haul travel。",
+    "tags": [
+      "daily",
+      "travel",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-take-in-the-view",
+    "date": "2026-06-24",
+    "expression": "take in the view",
+    "type": "phrase",
+    "meaning_zh": "欣賞風景",
+    "example": "We stopped at the top of the hill to take in the view before heading back.",
+    "note_zh": "take in 有「慢慢欣賞、吸收」的感覺，比 look at the view 更有停下來感受的語氣。",
+    "tags": [
+      "daily",
+      "travel",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-vicarious-pleasure",
+    "date": "2026-06-24",
+    "expression": "vicarious pleasure",
+    "type": "noun",
+    "meaning_zh": "間接體驗／感同身受的快樂",
+    "example": "She felt a kind of vicarious pleasure watching her students succeed.",
+    "note_zh": "vicarious 表示透過別人的經驗間接感受到；此詞偏正式，常見於心理、評論或寫作語境。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-a-gut-feeling",
+    "date": "2026-06-24",
+    "expression": "a gut feeling",
+    "type": "idiom",
+    "meaning_zh": "直覺／本能反應",
+    "example": "I had a gut feeling that something was wrong, so I checked the details again.",
+    "note_zh": "常用來表示沒有明確證據但內心強烈感覺某事是真的；偏口語但很常用。",
+    "tags": [
+      "daily",
+      "conversation",
+      "idiom"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-discriminate-against",
+    "date": "2026-06-24",
+    "expression": "discriminate against",
+    "type": "phrasal verb",
+    "meaning_zh": "歧視",
+    "example": "Companies should not discriminate against applicants because of their age or background.",
+    "note_zh": "常用結構是 discriminate against someone/something，指因年齡、性別、種族等因素差別待遇。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-kaleidoscope-of-emotions",
+    "date": "2026-06-24",
+    "expression": "kaleidoscope of emotions",
+    "type": "phrase",
+    "meaning_zh": "百感交集",
+    "example": "Graduation day brought a kaleidoscope of emotions, from excitement to nervousness.",
+    "note_zh": "kaleidoscope 原指萬花筒，這個片語形容情緒多樣且快速交錯，適合敘事或較有文學感的寫作。",
+    "tags": [
+      "writing",
+      "formal",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-tell-tale-sign",
+    "date": "2026-06-24",
+    "expression": "tell-tale sign",
+    "type": "collocation",
+    "meaning_zh": "明顯的跡象",
+    "example": "A sudden drop in motivation can be a tell-tale sign of burnout.",
+    "note_zh": "tell-tale 表示會洩露真相或顯示問題的；也常寫作 telltale sign。",
+    "tags": [
+      "academic",
+      "writing",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-24-science-is-communal",
+    "date": "2026-06-24",
+    "expression": "science is communal",
+    "type": "sentence pattern",
+    "meaning_zh": "科學是群體協作的",
+    "example": "Science is communal because researchers build on each other's findings and challenge each other's ideas.",
+    "note_zh": "communal 強調共同參與、共享或群體性；這句適合用在學術寫作或 TOEFL 口說中談科學合作。",
+    "tags": [
+      "academic",
+      "toefl",
+      "speaking",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-24",
+      "last_reviewed": null,
+      "next_review": "2026-06-25",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  }
+]

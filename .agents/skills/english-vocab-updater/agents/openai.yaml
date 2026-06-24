@@ -1,0 +1,4 @@
+interface:
+  display_name: "English Vocab Updater"
+  short_description: "Update English notes, JSON, and review site"
+  default_prompt: "Use $english-vocab-updater to 整理今天學到的英文並更新 Word、JSON 與網站資料。"
