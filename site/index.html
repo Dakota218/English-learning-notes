@@ -208,13 +208,20 @@
 
     <template id="libraryItemTemplate">
       <article class="library-item">
-        <div>
-          <h3 class="library-expression"></h3>
-          <p class="library-meaning"></p>
+        <div class="library-summary">
+          <div>
+            <h3 class="library-expression"></h3>
+            <p class="library-meaning"></p>
+          </div>
+          <div class="library-meta">
+            <span class="library-difficulty"></span>
+            <span class="library-next-review"></span>
+          </div>
         </div>
-        <div class="library-meta">
-          <span class="library-difficulty"></span>
-          <span class="library-next-review"></span>
+        <div class="library-detail is-hidden">
+          <blockquote class="library-example example"></blockquote>
+          <p class="library-note note"></p>
+          <div class="library-tags tags"></div>
         </div>
       </article>
     </template>

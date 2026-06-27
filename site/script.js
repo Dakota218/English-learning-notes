@@ -324,10 +324,50 @@ function createLibraryItem(item) {
   const node = els.libraryTemplate.content.firstElementChild.cloneNode(true);
   const review = item.review || {};
 
+  // 1. 填入 Summary 資訊
   node.querySelector(".library-expression").textContent = item.expression || "";
   node.querySelector(".library-meaning").textContent = item.meaning_zh || "";
   node.querySelector(".library-difficulty").textContent = difficultyLabel(review.difficulty);
+  node.querySelector(".library-difficulty").classList.add(review.difficulty || "new");
   node.querySelector(".library-next-review").textContent = review.next_review ? `下次 ${review.next_review}` : "未排程";
+
+  // 2. 填入 Detail 資訊
+  const detail = node.querySelector(".library-detail");
+  const exampleContainer = node.querySelector(".library-example");
+  const noteContainer = node.querySelector(".library-note");
+  const tagsContainer = node.querySelector(".library-tags");
+
+  // 處理例句（使用高亮）
+  if (item.example) {
+    appendHighlightedExample(exampleContainer, item.example, item.expression);
+  } else {
+    exampleContainer.remove();
+  }
+
+  // 處理補充
+  if (item.note_zh) {
+    noteContainer.textContent = item.note_zh;
+  } else {
+    noteContainer.remove();
+  }
+
+  // 處理標籤
+  if (item.tags && item.tags.length > 0) {
+    tagsContainer.replaceChildren();
+    for (const tag of item.tags) {
+      const chip = document.createElement("span");
+      chip.className = "tag";
+      chip.textContent = tag;
+      tagsContainer.append(chip);
+    }
+  } else {
+    tagsContainer.remove();
+  }
+
+  // 3. 點選事件控制展開與折疊
+  node.addEventListener("click", () => {
+    detail.classList.toggle("is-hidden");
+  });
 
   return node;
 }
@@ -361,16 +401,47 @@ function appendHighlightedExample(container, example, expression) {
 }
 
 function buildFlexibleExpressionPattern(expression) {
-  const words = expression.trim().split(/\s+/);
-
+  let pattern = expression.trim();
+  
+  // 1. 轉義正則特殊字元（保留空格用於後續切分）
+  pattern = escapeRegExp(pattern);
+  
+  // 2. 將 "someone" 和 "something" 替換成對應的名詞短語正則
+  pattern = pattern.replace(/\bsomeone\b/ig, "(?:[a-zA-Z0-9'\\s]{1,30})");
+  pattern = pattern.replace(/\bsomething\b/ig, "(?:[a-zA-Z0-9'\\s]{1,30})");
+  
+  // 3. 切分單字以處理時態和形容詞插入
+  const words = pattern.split(/\s+/);
   if (words.length === 0) return /$^/;
-
-  const [firstWord, ...restWords] = words;
-  const firstPattern = `${escapeRegExp(firstWord)}(?:d|ed|s|ing)?`;
-  const restPattern = restWords.map(escapeRegExp).join("\\s+");
-  const pattern = restPattern ? `${firstPattern}\\s+${restPattern}` : firstPattern;
-
-  return new RegExp(pattern, "i");
+  
+  const processedWords = words.map((word, idx) => {
+    // 如果是第一個單字且是常見動詞，我們做特定時態匹配
+    if (idx === 0) {
+      const lowerWord = word.toLowerCase();
+      if (lowerWord === "walk") return "walk(?:s|ed|ing)?";
+      if (lowerWord === "have") return "(?:have|has|had|having)";
+      if (lowerWord === "go") return "(?:go|goes|went|going)";
+      if (lowerWord === "do") return "(?:do|does|did|doing)";
+      if (lowerWord === "take") return "(?:take|takes|took|taking|taken)";
+      if (lowerWord === "make") return "(?:make|makes|made|making)";
+      if (lowerWord === "get") return "(?:get|gets|got|getting|gotten)";
+      if (lowerWord === "find") return "(?:find|finds|found|finding)";
+      if (lowerWord === "be") return "(?:be|is|am|are|was|were|been|being)";
+      
+      // 其他一般動詞變化
+      return `${word}(?:s|es|d|ed|ing)?`;
+    }
+    
+    // 如果中間有冠詞 "a" 或 "an"，允許後面加一個可選單字（形容詞）
+    if (word.toLowerCase() === "a" || word.toLowerCase() === "an") {
+      return `${word}(?:\\s+\\w+)?`;
+    }
+    
+    return word;
+  });
+  
+  const finalPattern = processedWords.join("\\s+");
+  return new RegExp(finalPattern, "i");
 }
 
 function escapeRegExp(value) {
