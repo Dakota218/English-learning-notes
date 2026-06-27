@@ -574,5 +574,74 @@
       "difficulty": "new",
       "history": []
     }
+  },
+  {
+    "id": "2026-06-28-provoke",
+    "date": "2026-06-28",
+    "expression": "provoke",
+    "type": "verb",
+    "meaning_zh": "激怒、挑釁",
+    "example": "Don't provoke him any further; he is already on the verge of losing his temper.",
+    "note_zh": "雖然意思是「激怒」或「挑釁」，但我們常用在叫人別去惹事生非、或是別再惡化局面。日常或電影常見用法如 \"Don't provoke him/her\"（別惹他），或 \"unprovoked attack\"（莫名其妙、毫無預警的攻擊/批評）。",
+    "tags": [
+      "daily",
+      "conversation",
+      "verb"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-28",
+      "last_reviewed": null,
+      "next_review": "2026-06-29",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-28-alligator",
+    "date": "2026-06-28",
+    "expression": "alligator",
+    "type": "noun",
+    "meaning_zh": "短吻鱷（常用於告別語）",
+    "example": "\"See you later, alligator!\" she waved goodbye, and he replied, \"In a while, crocodile!\"",
+    "note_zh": "除了指動物本身之外，在日常對話中文化上最常用的是押韻告別語：\"See you later, alligator!\"，而標準、必須知道的回應是 \"In a while, crocodile!\"。這是和朋友道別時一種趣味、輕鬆的說法。",
+    "tags": [
+      "daily",
+      "conversation",
+      "spoken expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-28",
+      "last_reviewed": null,
+      "next_review": "2026-06-29",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-28-stairwell",
+    "date": "2026-06-28",
+    "expression": "stairwell",
+    "type": "noun",
+    "meaning_zh": "樓梯間、樓梯井",
+    "example": "Please head toward the emergency stairwell if the alarm goes off.",
+    "note_zh": "指包含整座樓梯的垂直封閉空間。在國外校園、公寓或大樓中是非常普遍的安全基礎單字。",
+    "tags": [
+      "daily",
+      "conversation",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-28",
+      "last_reviewed": null,
+      "next_review": "2026-06-29",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
   }
 ]
