@@ -366,7 +366,20 @@ function createLibraryItem(item) {
 
   // 3. 點選事件控制展開與折疊
   node.addEventListener("click", () => {
+    // 隱藏其他所有已展開的項目 (手風琴效果)
+    const allDetails = els.libraryList.querySelectorAll(".library-detail");
+    allDetails.forEach((d) => {
+      if (d !== detail) {
+        d.classList.add("is-hidden");
+      }
+    });
+
     detail.classList.toggle("is-hidden");
+  });
+
+  // 阻止細節區塊內部的點擊事件冒泡，避免選取或點選細節文字時導致折疊
+  detail.addEventListener("click", (event) => {
+    event.stopPropagation();
   });
 
   return node;
