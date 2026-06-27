@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>英文複習</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <h1 class="eyebrow">English Review</h1>
+      </div>
+      <div class="date-panel">
+        <span>今天</span>
+        <strong id="todayLabel">--</strong>
+        <p class="sync-status" id="syncStatus">本機儲存</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="calendar-panel" aria-label="學習日曆">
+        <div class="calendar-summary">
+          <div>
+            <p class="eyebrow">Learning Calendar</p>
+            <h2 id="calendarMonth">--</h2>
+          </div>
+          <div class="calendar-stats">
+            <span><strong id="addedDaysCount">0</strong> 新增日</span>
+            <span><strong id="reviewDaysCount">0</strong> 複習日</span>
+            <span><strong id="activeDaysCount">0</strong> 學習日</span>
+          </div>
+        </div>
+        <div class="calendar-legend" aria-label="日曆標記">
+          <span><i class="legend-added"></i>新增</span>
+          <span><i class="legend-reviewed"></i>複習</span>
+          <span><i class="legend-both"></i>都有</span>
+        </div>
+        <div class="calendar-weekdays" aria-hidden="true">
+          <span>日</span>
+          <span>一</span>
+          <span>二</span>
+          <span>三</span>
+          <span>四</span>
+          <span>五</span>
+          <span>六</span>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Review Queue</p>
+            <h2>今日待複習</h2>
+          </div>
+          <div class="review-mode-selector">
+            <button type="button" id="modeCardBtn" class="mode-btn active">卡片</button>
+            <button type="button" id="modeClozeBtn" class="mode-btn">拼寫</button>
+          </div>
+          <span class="count-pill" id="duePill">0 筆</span>
+        </div>
+        <div class="review-deck" id="dueList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">New Today</p>
+            <h2>今日新增</h2>
+          </div>
+          <span class="count-pill" id="newPill">0 筆</span>
+        </div>
+        <div class="card-grid" id="todayList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Needs Attention</p>
+            <h2>容易忘記</h2>
+          </div>
+          <span class="count-pill" id="hardPill">0 筆</span>
+        </div>
+        <div class="card-grid" id="hardList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Library</p>
+            <h2>全部詞彙</h2>
+          </div>
+          <span class="count-pill" id="libraryPill">0 筆</span>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span>搜尋</span>
+            <input id="searchInput" type="search" placeholder="輸入 expression、中文意思、例句或 tag">
+          </label>
+          <label class="filter-box">
+            <span>篩選</span>
+            <select id="filterSelect">
+              <option value="all">全部</option>
+              <option value="today">今日新增</option>
+              <option value="due">今日待複習</option>
+              <option value="hard">容易忘記</option>
+              <option value="familiar">已熟悉</option>
+              <option value="mastered">已精熟</option>
+              <option value="toefl">TOEFL</option>
+              <option value="academic">Academic Writing</option>
+              <option value="daily">Daily Conversation</option>
+              <option value="email">Email / Formal Writing</option>
+              <option value="collocation">Collocation</option>
+              <option value="idiom">Idiom</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="card-grid" id="libraryList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Details</p>
+            <h2>簡單統計</h2>
+          </div>
+        </div>
+        <div class="summary-grid">
+          <div>
+            <h3>Tag 數量</h3>
+            <div class="tag-cloud" id="tagStats"></div>
+          </div>
+          <div>
+            <h3>最常忘記</h3>
+            <ol class="forget-list" id="forgetList"></ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel chart-panel" aria-label="學習統計圖">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Statistics</p>
+            <h2>學習統計圖</h2>
+          </div>
+        </div>
+        <div class="stats-chart">
+          <div class="chart-row">
+            <span class="chart-label">累積詞彙</span>
+            <div class="chart-track"><span class="chart-fill chart-total" id="totalBar"></span></div>
+            <strong id="totalCount">0</strong>
+          </div>
+          <div class="chart-row">
+            <span class="chart-label">今日新增</span>
+            <div class="chart-track"><span class="chart-fill chart-today" id="todayBar"></span></div>
+            <strong id="todayCount">0</strong>
+          </div>
+          <div class="chart-row">
+            <span class="chart-label">今日待複習</span>
+            <div class="chart-track"><span class="chart-fill chart-due" id="dueBar"></span></div>
+            <strong id="dueCount">0</strong>
+          </div>
+          <div class="chart-row">
+            <span class="chart-label">容易忘記</span>
+            <div class="chart-track"><span class="chart-fill chart-hard" id="hardBar"></span></div>
+            <strong id="hardCount">0</strong>
+          </div>
+          <div class="chart-row">
+            <span class="chart-label">已精熟</span>
+            <div class="chart-track"><span class="chart-fill chart-mastered" id="masteredBar"></span></div>
+            <strong id="masteredCount">0</strong>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template id="wordCardTemplate">
+      <article class="word-card">
+        <div class="word-topline">
+          <span class="word-type"></span>
+          <span class="difficulty"></span>
+        </div>
+        <h3 class="expression"></h3>
+        <p class="meaning"></p>
+        <blockquote class="example"></blockquote>
+        <p class="note"></p>
+        <div class="tags"></div>
+        <dl class="review-meta">
+          <div>
+            <dt>階段</dt>
+            <dd class="stage"></dd>
+          </div>
+          <div>
+            <dt>下次複習</dt>
+            <dd class="next-review"></dd>
+          </div>
+        </dl>
+        <div class="review-actions">
+          <button type="button" data-review-result="forgot">忘記了</button>
+          <button type="button" data-review-result="blurry">有點模糊</button>
+          <button type="button" data-review-result="remembered">記得</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="libraryItemTemplate">
+      <article class="library-item">
+        <div>
+          <h3 class="library-expression"></h3>
+          <p class="library-meaning"></p>
+        </div>
+        <div class="library-meta">
+          <span class="library-difficulty"></span>
+          <span class="library-next-review"></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

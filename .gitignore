@@ -8,3 +8,10 @@
 
 # Optional local backups created before large updates
 backups/
+
+# Local Netlify folder
+.netlify
+
+# Node dependencies
+node_modules/
+
