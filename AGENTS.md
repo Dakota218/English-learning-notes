@@ -454,17 +454,20 @@ date == today
 
 ---
 
-## Netlify 部署原則
+## Git 同步與 Netlify 部署原則
 
-本專案網站部署到 Netlify。
+本專案網站部署到 Netlify，並使用 GitHub 進行版本控制。
 
 原則：
 
-* 不要自動部署到 production，除非我明確要求。
-* 如果我說「部署網站」或「更新 Netlify」，可以使用 Netlify CLI。
-* 若只是每日整理英文筆記，通常只需要更新檔案，不一定要部署。
+* 每次每日更新英文筆記和 JSON 資料後，**必須自動執行 Git 同步與網站部署**。
+* 自動執行的步驟：
+  1. 將所有變更加入暫存 (`git add .`)
+  2. 提交變更 (`git commit -m "Update vocabulary: YYYY-MM-DD"`)，其中 YYYY-MM-DD 為今天日期
+  3. 推送到 GitHub 遠端倉庫 (`git push origin main`)
+  4. 部署網站至 Netlify 生產環境 (`npx netlify deploy --prod`)，確保本機與線上同步。
+* 自動執行前**不需**再徵求使用者確認，請直接執行指令完成。
 * 部署前請確認 `site/` 裡的網站可以正常讀取資料。
-* 如果有 GitHub 版本控制，優先讓我確認是否要 commit / push。
 
 ---
 
@@ -573,5 +576,5 @@ hard
 * 不要破壞 JSON 格式。
 * 不要把 API key、token 或帳號密碼寫進專案。
 * 不要自動安裝大型套件，除非有必要。
-* 不要自動部署 production，除非我明確要求。
+* 每次更新應自動進行 Git commit、push 並部署到 Netlify 生產環境。
 * 如果要使用會改動大量檔案的指令，先說明原因。

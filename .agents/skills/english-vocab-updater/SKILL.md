@@ -27,7 +27,8 @@ The project has three synchronized surfaces:
 9. If `site/data/vocab.json` exists or the website reads from it, synchronize it from `data/vocab.json`.
 10. Make only small site changes unless the user explicitly asks for a redesign.
 11. Validate JSON parsing and check that the data copies match.
-12. Reply in Traditional Chinese using the report format below.
+12. Automatically perform Git commit/push (with message 'Update vocabulary: YYYY-MM-DD') and Netlify production deployment (`npx netlify deploy --prod`).
+13. Reply in Traditional Chinese using the report format below.
 
 ## Learning Item Shape
 
@@ -148,7 +149,7 @@ Keep the site simple and useful for daily review. The home page should prioritiz
 
 Useful filters include: 全部, 今日新增, 今日待複習, 容易忘記, 已熟悉, 已精熟, TOEFL, Academic, Daily Conversation, Email Writing, Idiom, Collocation.
 
-Do not deploy to Netlify unless the user explicitly asks to deploy, update Netlify, publish, or run a deploy.
+Always automatically stage all changes, commit with message "Update vocabulary: YYYY-MM-DD" (using today's date), push to GitHub, and deploy to Netlify using `npx netlify deploy --prod`.
 
 ## Validation
 
