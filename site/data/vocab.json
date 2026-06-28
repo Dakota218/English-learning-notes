@@ -643,5 +643,288 @@
       "difficulty": "new",
       "history": []
     }
+  },
+  {
+    "id": "2026-06-29-hollowness",
+    "date": "2026-06-29",
+    "expression": "hollowness",
+    "type": "noun",
+    "meaning_zh": "空虛、空洞",
+    "example": "Despite his wealth and fame, a persistent feeling of hollowness haunted him.",
+    "note_zh": "常用來指物體的空心，或抽象的空虛、無意義感。\n* 常用搭配詞：a feeling of hollowness (空虛感), emotional hollowness (情感空虛), the hollowness of his words (他言語的空洞)",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-unprecedented",
+    "date": "2026-06-29",
+    "expression": "unprecedented",
+    "type": "adjective",
+    "meaning_zh": "史無前例的、空前的",
+    "example": "The global economy is facing unprecedented challenges in the wake of the pandemic.",
+    "note_zh": "在 TOEFL 或學術寫作中非常常用，用來形容事情的規模、速度或程度是以前從未發生過的。\n* 常用搭配詞：unprecedented challenge (前所未有的挑戰), unprecedented growth (空前的成長), at an unprecedented rate (以空前的速度)",
+    "tags": [
+      "academic",
+      "writing",
+      "toefl",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-demographic",
+    "date": "2026-06-29",
+    "expression": "demographic",
+    "type": "noun",
+    "meaning_zh": "人口統計數據、特定族群；人口統計的",
+    "example": "The company is expanding its marketing efforts to reach a younger demographic.",
+    "note_zh": "當名詞時常用來指「（具有特定特徵的）消費族群、人口群體」；當形容詞時指「與人口統計相關的」。\n* 常用搭配詞：demographic shift (人口結構轉變), demographic change (人口結構變化), target demographic (目標族群)",
+    "tags": [
+      "academic",
+      "writing",
+      "toefl",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-go-mainstream",
+    "date": "2026-06-29",
+    "expression": "go mainstream",
+    "type": "phrase",
+    "meaning_zh": "走向主流、普及",
+    "example": "Once considered a niche hobby, e-sports has fully gone mainstream over the past decade.",
+    "note_zh": "指原本屬於小眾 (niche) 或次文化的事物，逐漸被大眾接受、普及並成為社會主流。\n* 常用搭配詞：go mainstream overnight (一夜之間成為主流), quickly go mainstream (迅速普及)",
+    "tags": [
+      "daily",
+      "conversation",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-backlash",
+    "date": "2026-06-29",
+    "expression": "backlash",
+    "type": "noun",
+    "meaning_zh": "（社會或大眾的）強烈反彈、反對",
+    "example": "The company faced a massive public backlash after announcing the new pricing policy.",
+    "note_zh": "指大眾對某個政策、事件或言論所產生的負面且強烈的集體反應。\n* 常用搭配詞：public backlash (輿論反彈), face a backlash (面臨強烈反對), spark a backlash (引發強烈反彈)",
+    "tags": [
+      "academic",
+      "writing",
+      "formal",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-surreptitiously",
+    "date": "2026-06-29",
+    "expression": "surreptitiously",
+    "type": "adverb",
+    "meaning_zh": "偷偷摸摸地、暗中地、鬼鬼祟祟地",
+    "example": "He surreptitiously glanced at his watch during the extremely boring lecture.",
+    "note_zh": "指不想被別人發現、悄悄進行某事的動作，比 secretly 更帶有「鬼鬼祟祟、避免被注目」的含義。\n* 常用搭配詞：surreptitiously glance at (偷偷地瞥一眼), surreptitiously record (暗中錄影/音), surreptitiously insert (偷偷塞入)",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-jarring",
+    "date": "2026-06-29",
+    "expression": "jarring",
+    "type": "adjective",
+    "meaning_zh": "刺耳的、不協調的、令人震驚/不舒服的",
+    "example": "The sudden transition from classical music to heavy metal was quite jarring for the audience.",
+    "note_zh": "常用來形容感官（如聲音、色彩）或情境極度不協調，給人帶來突兀、震驚或不舒服的感覺。\n* 常用搭配詞：jarring transition (突兀的轉折), jarring experience (令人震驚/不適的經歷), jarring sound (刺耳的聲音)",
+    "tags": [
+      "daily",
+      "writing",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-intrusive",
+    "date": "2026-06-29",
+    "expression": "intrusive",
+    "type": "adjective",
+    "meaning_zh": "打擾的、侵入性的、干擾的",
+    "example": "Pop-up ads are often perceived as highly intrusive by internet users.",
+    "note_zh": "用來形容某事物未經邀請便強行介入，對人的隱私、空間或思緒造成干擾。\n* 常用搭配詞：intrusive thoughts (侵入性想法/雜念), intrusive advertising (打擾人的廣告), intrusive questions (唐突/探聽隱私的問題)",
+    "tags": [
+      "daily",
+      "academic",
+      "writing",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-revamped",
+    "date": "2026-06-29",
+    "expression": "revamped",
+    "type": "adjective",
+    "meaning_zh": "改造過的、翻新過的、改版後的",
+    "example": "The restaurant reopened with a revamped menu featuring locally sourced ingredients.",
+    "note_zh": "revamp 作動詞是「翻新、修改、改進」；revamped 常作形容詞使用，指事物被升級或重新設計以顯得更好、更現代。\n* 常用搭配詞：revamped version (改版/翻新後的新版本), revamped website (全新改版後的網站), revamped system (重新改造的系統)",
+    "tags": [
+      "daily",
+      "writing",
+      "email",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-field-of-vision",
+    "date": "2026-06-29",
+    "expression": "field of vision",
+    "type": "noun phrase",
+    "meaning_zh": "視野、視線範圍",
+    "example": "The sleek head-up display projects key driving data directly onto the driver's field of vision.",
+    "note_zh": "指眼睛不轉動時所能看到的整個空間範圍，常搭配 block 或 enter 使用。\n* 常用搭配詞：enter one's field of vision (進入某人的視線), block one's field of vision (遮擋某人的視野), outer edge of field of vision (視野邊緣)",
+    "tags": [
+      "daily",
+      "academic",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-proposition",
+    "date": "2026-06-29",
+    "expression": "proposition",
+    "type": "noun",
+    "meaning_zh": "主張、提案、觀點；提議",
+    "example": "The consultant presented a unique value proposition that convinced the board to invest.",
+    "note_zh": "常用在學術討論（代表一項論點、命題）或商業場合（代表提議、主張）。\n* 常用搭配詞：business proposition (商業提案), value proposition (價值主張), testing a proposition (測試一個假設/主張)",
+    "tags": [
+      "academic",
+      "writing",
+      "formal",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-06-29-grim",
+    "date": "2026-06-29",
+    "expression": "grim",
+    "type": "adjective",
+    "meaning_zh": "令人沮喪的、糟糕的、嚴肅的、陰森的",
+    "example": "The report paints a grim picture of the region's economic recovery.",
+    "note_zh": "用來形容情況很不樂觀、令人感到沉重或悲觀（例如 grim reality），也可以指人的表情嚴肅冷酷。\n* 常用搭配詞：grim reality (殘酷的現實), grim prospect/future (黯淡的前景/未來), grim face/expression (嚴肅/沉重的表情)",
+    "tags": [
+      "academic",
+      "writing",
+      "toefl",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-06-29",
+      "last_reviewed": null,
+      "next_review": "2026-06-30",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
   }
 ]
