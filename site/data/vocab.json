@@ -1511,5 +1511,98 @@
       "difficulty": "new",
       "history": []
     }
+  },
+  {
+    "id": "2026-07-05-compliance",
+    "date": "2026-07-05",
+    "expression": "compliance",
+    "type": "noun",
+    "meaning_zh": "服從、順從；遵守、合規",
+    "example": "The more parents demand compliance, the more children dig in their heels.",
+    "note_zh": "指遵守法律、規則或要求。在日常教育中，意指服從管教。",
+    "tags": [
+      "daily",
+      "academic",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-dig-in-ones-heels",
+    "date": "2026-07-05",
+    "expression": "dig in one's heels",
+    "type": "idiom",
+    "meaning_zh": "堅持己見、固執己見、不肯讓步",
+    "example": "The more parents demand compliance, the more children dig in their heels.",
+    "note_zh": "字面意思是將腳後跟深埋入土中，比喻在受到反對或壓力時，態度變得更加堅定頑固，絕不妥協。",
+    "tags": [
+      "daily",
+      "conversation",
+      "idiom",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-rebellious",
+    "date": "2026-07-05",
+    "expression": "rebellious",
+    "type": "adjective",
+    "meaning_zh": "叛逆的、造反的、難以控制的",
+    "example": "Excessive pressure can make children more rebellious.",
+    "note_zh": "形容不服從管教或反抗權威的行為，常用於形容青少年（rebellious teenagers）。",
+    "tags": [
+      "daily",
+      "academic",
+      "adjective"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-backfire",
+    "date": "2026-07-05",
+    "expression": "backfire",
+    "type": "verb",
+    "meaning_zh": "事與願違、適得其反",
+    "example": "Pushing children too hard often backfires; they end up doing the exact opposite.",
+    "note_zh": "形容某個計畫或行動產生了與預期相反的、糟糕的結果。",
+    "tags": [
+      "daily",
+      "academic",
+      "verb"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
   }
 ]
