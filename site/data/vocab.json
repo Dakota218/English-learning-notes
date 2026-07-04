@@ -926,5 +926,590 @@
       "difficulty": "new",
       "history": []
     }
+  },
+  {
+    "id": "2026-07-05-prosaic",
+    "date": "2026-07-05",
+    "expression": "prosaic",
+    "type": "adjective",
+    "meaning_zh": "平淡的、乏味的、無趣的",
+    "example": "The reality of the job was much more prosaic than the exciting description in the brochure.",
+    "note_zh": "用於形容事物平凡、枯燥，缺乏想像力或詩意。常用於寫作或 TOEFL 閱讀。",
+    "tags": [
+      "academic",
+      "writing",
+      "adjective"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-radar",
+    "date": "2026-07-05",
+    "expression": "radar",
+    "type": "noun",
+    "meaning_zh": "雷達；注意力/偵測範圍 (比喻)",
+    "example": "The issue was completely off our radar until the client brought it up yesterday.",
+    "note_zh": "除了本義「雷達」，日常生活中最常使用比喻片語，例如 on someone's radar（被某人注意到）或 fly under the radar（低調、不引人注意）。",
+    "tags": [
+      "daily",
+      "conversation",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-scrutiny",
+    "date": "2026-07-05",
+    "expression": "scrutiny",
+    "type": "noun",
+    "meaning_zh": "仔細檢查、審查、監視",
+    "example": "The new policy has come under close public scrutiny over the past week.",
+    "note_zh": "強調極為仔細且嚴格的檢查，常見於學術、政治、商業情境。\n* 常用搭配詞：come under scrutiny (受到審查), close scrutiny (嚴密審查), intense scrutiny (強烈關注/審查)",
+    "tags": [
+      "academic",
+      "writing",
+      "formal",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-wither-on-the-vine",
+    "date": "2026-07-05",
+    "expression": "wither on the vine",
+    "type": "idiom",
+    "meaning_zh": "胎死腹中、中途夭折、消逝（因缺乏支持或關注）",
+    "example": "Without proper funding, many excellent research projects are left to wither on the vine.",
+    "note_zh": "字面意思是「在藤蔓上枯萎」，比喻計畫、創意或機會在尚未成熟或付諸實現前，就因為缺乏照料、支持或資源而消逝。",
+    "tags": [
+      "writing",
+      "idiom",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-surveillance",
+    "date": "2026-07-05",
+    "expression": "surveillance",
+    "type": "noun",
+    "meaning_zh": "監視、監督、監控",
+    "example": "The government installed more surveillance cameras in the city center to improve public safety.",
+    "note_zh": "通常用於安全、警方或政府監控的情境。\n* 常用搭配詞：surveillance camera (監視器), under surveillance (受監視), mass surveillance (大規模監控)",
+    "tags": [
+      "academic",
+      "writing",
+      "noun",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-rack-up-over",
+    "date": "2026-07-05",
+    "expression": "rack up over",
+    "type": "phrasal verb",
+    "meaning_zh": "累計達到、取得（超過...的數量、分數或債務）",
+    "example": "The video racked up over one million views within just twenty-four hours of its release.",
+    "note_zh": "rack up 指累積（分數、利潤、債務、點閱率等），後面加上 over 表示累積超過某個數量。偏口語且常見於新聞與日常報導。",
+    "tags": [
+      "daily",
+      "conversation",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-deadpan",
+    "date": "2026-07-05",
+    "expression": "deadpan",
+    "type": "adjective",
+    "meaning_zh": "面無表情的、板著臉的（通常帶幽默感）",
+    "example": "He delivered the joke with a perfectly deadpan expression, making everyone laugh even harder.",
+    "note_zh": "形容人在開玩笑或說好笑的事情時，故意裝作嚴肅、沒有表情的樣子，這是西方幽默中常見的風格（冷面笑匠）。",
+    "tags": [
+      "daily",
+      "conversation",
+      "adjective"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-logistics",
+    "date": "2026-07-05",
+    "expression": "logistics",
+    "type": "noun",
+    "meaning_zh": "物流、後勤、籌劃",
+    "example": "We need to figure out the logistics of moving all the equipment to the exhibition hall.",
+    "note_zh": "既可指商業上的「物流」，也常用來指籌辦某項活動、專案或旅行時，所有具體細節的「組織與安排」。\n* 常用搭配詞：the logistics of (某事的籌劃/細節), business logistics (商業物流)",
+    "tags": [
+      "daily",
+      "writing",
+      "email",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-bereaved",
+    "date": "2026-07-05",
+    "expression": "bereaved",
+    "type": "adjective",
+    "meaning_zh": "喪失親人的、哀慟的",
+    "example": "The community came together to support the bereaved family after the tragic accident.",
+    "note_zh": "指因親友去世而感到悲傷。the bereaved 也可以指「喪家、遺族」。",
+    "tags": [
+      "formal",
+      "adjective"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-herald",
+    "date": "2026-07-05",
+    "expression": "herald",
+    "type": "verb",
+    "meaning_zh": "預示...的到來、宣告、宣告為...",
+    "example": "The blooming of cherry blossoms heralds the arrival of spring.",
+    "note_zh": "作動詞表示「預示、宣告」；在學術寫作或 TOEFL 閱讀中常用來形容某個事件或科技宣告了新時代的來臨。\n* 常用搭配詞：herald a new era (預示新時代的到來)",
+    "tags": [
+      "academic",
+      "writing",
+      "toefl",
+      "verb"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-overreach",
+    "date": "2026-07-05",
+    "expression": "overreach",
+    "type": "noun",
+    "meaning_zh": "越權、過度擴張、手伸得太長",
+    "example": "Critics argued that the new law represents a significant government overreach into citizens' private lives.",
+    "note_zh": "常用作 government overreach，表示機構或個人超越了其權限範圍，或者野心太大而超出自身能力。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-lifeline",
+    "date": "2026-07-05",
+    "expression": "lifeline",
+    "type": "noun",
+    "meaning_zh": "生命線、救生索、救命稻草 (指關鍵的支持或保障)",
+    "example": "The monthly government subsidy proved to be a vital lifeline for small businesses during the recession.",
+    "note_zh": "比喻非常關鍵的、維持生存或提供重要支持的事物。\n* 常用搭配詞：throw a lifeline (提供一線生機), a vital lifeline (關鍵生命線)",
+    "tags": [
+      "daily",
+      "writing",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-bow-tie",
+    "date": "2026-07-05",
+    "expression": "bow tie",
+    "type": "noun",
+    "meaning_zh": "蝶形領結",
+    "example": "He wore a classic black tuxedo with a matching bow tie to the charity gala.",
+    "note_zh": "指穿著正式禮服時搭配的蝴蝶結領帶，相較於常規領帶更顯正式或有特定風格。",
+    "tags": [
+      "daily",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-petition",
+    "date": "2026-07-05",
+    "expression": "petition",
+    "type": "noun",
+    "meaning_zh": "請願書、請願；訴狀",
+    "example": "Residents started an online petition to request a new park in the neighborhood.",
+    "note_zh": "可作名詞（請願書）或動詞（向...請願）。多用於社會運動、法律訴訟或正式向組織提出集體要求。\n* 常用搭配詞：sign a petition (簽署請願書), launch a petition (發起請願)",
+    "tags": [
+      "academic",
+      "writing",
+      "noun",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-retort",
+    "date": "2026-07-05",
+    "expression": "retort",
+    "type": "verb",
+    "meaning_zh": "反駁、回嘴、反唇相譏",
+    "example": "\"That is none of your business,\" she retorted angrily when asked about her salary.",
+    "note_zh": "指快速、尖銳或機智地回覆別人的指責或問題。也可作名詞使用。",
+    "tags": [
+      "daily",
+      "conversation",
+      "writing",
+      "verb"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-seamless",
+    "date": "2026-07-05",
+    "expression": "seamless",
+    "type": "adjective",
+    "meaning_zh": "無縫的、接合流暢的、完美的",
+    "example": "The software update provides a seamless transition between mobile and desktop platforms.",
+    "note_zh": "引申為系統、轉換或合作之間的過渡非常流暢，沒有阻礙或破綻。常用於商業、IT 和 email。\n* 常用搭配詞：seamless integration (無縫整合), seamless transition (流暢轉換)",
+    "tags": [
+      "daily",
+      "writing",
+      "email",
+      "adjective",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-sinister",
+    "date": "2026-07-05",
+    "expression": "sinister",
+    "type": "adjective",
+    "meaning_zh": "陰險的、邪惡的、不祥的",
+    "example": "There was a sinister look on his face, which made me feel deeply uneasy.",
+    "note_zh": "形容人或事物散發出邪惡、危險或不祥的氣息。",
+    "tags": [
+      "daily",
+      "writing",
+      "adjective"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-undertone",
+    "date": "2026-07-05",
+    "expression": "undertone",
+    "type": "noun",
+    "meaning_zh": "潛在的情感/意圖、弦外之音",
+    "example": "Although he spoke politely, there was an unmistakable undertone of hostility in his voice.",
+    "note_zh": "指言談中隱約透露出、沒有明說的態度或情感（如憤怒、諷刺、憂傷）。\n* 常用搭配詞：an undertone of (隱約帶著...的弦外之音)",
+    "tags": [
+      "academic",
+      "writing",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-deteriorate",
+    "date": "2026-07-05",
+    "expression": "deteriorate",
+    "type": "verb",
+    "meaning_zh": "惡化、變壞、退化",
+    "example": "The patient's condition began to deteriorate rapidly after the surgery, requiring emergency care.",
+    "note_zh": "用於形容狀況、健康、氣候或關係等變得更糟。在 TOEFL 或是學術寫作中是非常核心的字眼。",
+    "tags": [
+      "academic",
+      "writing",
+      "toefl",
+      "verb"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-cram",
+    "date": "2026-07-05",
+    "expression": "cram",
+    "type": "verb",
+    "meaning_zh": "塞滿、擠進；（考前）臨時抱佛腳",
+    "example": "I had to cram all my clothes into one small suitcase before heading to the airport.",
+    "note_zh": "指硬把東西塞入有限空間。在日常對話中也常用來指「臨時抱佛腳」（為考試死記硬背）。\n* 常用搭配詞：cram for an exam (為考試臨時抱佛腳), cram stuff into (把東西塞進...)",
+    "tags": [
+      "daily",
+      "conversation",
+      "verb",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-affectionate",
+    "date": "2026-07-05",
+    "expression": "affectionate",
+    "type": "adjective",
+    "meaning_zh": "充滿溫情的、親切的、表示關愛的",
+    "example": "She gave her dog an affectionate pat on the head before leaving for work.",
+    "note_zh": "形容人或行為溫柔、充滿愛意。名詞形式為 affection（喜愛、感情）。",
+    "tags": [
+      "daily",
+      "conversation",
+      "adjective"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-tropical-cyclone",
+    "date": "2026-07-05",
+    "expression": "tropical cyclone",
+    "type": "noun",
+    "meaning_zh": "熱帶氣旋",
+    "example": "The meteorological office issued a warning as the tropical cyclone approached the coast.",
+    "note_zh": "氣象學術語，在不同洋區有不同稱呼（在西北太平洋稱為颱風 typhoon，在大西洋/東北太平洋稱為颶風 hurricane）。",
+    "tags": [
+      "academic",
+      "toefl",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-transcript",
+    "date": "2026-07-05",
+    "expression": "transcript",
+    "type": "noun",
+    "meaning_zh": "文字記錄、成績單",
+    "example": "The journalist requested a full transcript of the interview to ensure accurate quotes.",
+    "note_zh": "可指錄音或影片轉換成的「逐字稿、文字記錄」；亦可指學校的「成績單」(academic transcript)。\n* 常用搭配詞：academic transcript (成績單), interview transcript (訪談紀錄)",
+    "tags": [
+      "daily",
+      "academic",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-subtitle",
+    "date": "2026-07-05",
+    "expression": "subtitle",
+    "type": "noun",
+    "meaning_zh": "字幕；副標題",
+    "example": "I prefer to watch foreign films with English subtitles so I can understand the dialogue better.",
+    "note_zh": "可以是電影/影片的「字幕」（常用複數 subtitles），或是書籍/文章的「副標題」。",
+    "tags": [
+      "daily",
+      "conversation",
+      "noun"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-05-cusp",
+    "date": "2026-07-05",
+    "expression": "cusp",
+    "type": "noun",
+    "meaning_zh": "尖端、分界點、轉折點",
+    "example": "The industry is on the cusp of a major revolution with the rapid advancement of artificial intelligence.",
+    "note_zh": "最常用的片語是 on the cusp of，表示正處於兩個時期或狀態之間的轉折點，即將迎來重大改變。\n* 常用搭配詞：on the cusp of (正處於...的邊緣/即將迎來...)",
+    "tags": [
+      "academic",
+      "writing",
+      "noun",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-05",
+      "last_reviewed": null,
+      "next_review": "2026-07-06",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
   }
 ]
