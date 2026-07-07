@@ -1604,5 +1604,120 @@
       "difficulty": "new",
       "history": []
     }
+  },
+  {
+    "id": "2026-07-08-visceral",
+    "date": "2026-07-08",
+    "expression": "visceral",
+    "type": "adjective",
+    "meaning_zh": "發自本能的、強烈情緒上的；內臟的",
+    "example": "Her speech triggered a visceral reaction from the audience because it touched on their deepest fears.",
+    "note_zh": "常用來形容不是理性分析，而是身體或情緒上很直接、很強烈的反應；醫學上也可指「內臟的」。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-08",
+      "last_reviewed": null,
+      "next_review": "2026-07-09",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-08-metabolic-system",
+    "date": "2026-07-08",
+    "expression": "metabolic system",
+    "type": "phrase",
+    "meaning_zh": "代謝系統",
+    "example": "Regular exercise can help support a healthy metabolic system and improve the way the body uses energy.",
+    "note_zh": "metabolic 是「代謝的、新陳代謝的」；常見搭配有 metabolic rate（代謝率）、metabolic disorder（代謝疾病）。",
+    "tags": [
+      "academic",
+      "toefl",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-08",
+      "last_reviewed": null,
+      "next_review": "2026-07-09",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-08-spontaneous",
+    "date": "2026-07-08",
+    "expression": "spontaneous",
+    "type": "adjective",
+    "meaning_zh": "自發的、自然發生的、未經安排的",
+    "example": "After the presentation, the speaker received spontaneous applause from the audience.",
+    "note_zh": "形容事情自然、突然發生，沒有事先安排或被迫；也可用於醫學/生物，表示沒有外部原因或非受控地發生。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-08",
+      "last_reviewed": null,
+      "next_review": "2026-07-09",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-08-optimistic",
+    "date": "2026-07-08",
+    "expression": "optimistic",
+    "type": "adjective",
+    "meaning_zh": "樂觀的、對未來抱持希望的",
+    "example": "I am optimistic that our study plan will work if we stay consistent for the next few weeks.",
+    "note_zh": "常用 be optimistic about 表示「對某事感到樂觀」。語氣正面，但過度樂觀可說 overly optimistic。",
+    "tags": [
+      "daily",
+      "conversation",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-08",
+      "last_reviewed": null,
+      "next_review": "2026-07-09",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-08-pessimistic",
+    "date": "2026-07-08",
+    "expression": "pessimistic",
+    "type": "adjective",
+    "meaning_zh": "悲觀的、對結果不抱希望的",
+    "example": "Some investors became pessimistic about the market after the company reported weaker earnings.",
+    "note_zh": "常用 be pessimistic about 表示「對某事悲觀」。與 optimistic 相反，常帶有負面或不信任未來結果的語氣。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-08",
+      "last_reviewed": null,
+      "next_review": "2026-07-09",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
   }
 ]

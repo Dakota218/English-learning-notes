@@ -90,8 +90,9 @@ async function init() {
   try {
     const response = await fetch(DATA_URL);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    vocab = await response.json();
-    if (!Array.isArray(vocab)) throw new Error("vocab.json must be an array");
+    const loadedVocab = await response.json();
+    if (!Array.isArray(loadedVocab)) throw new Error("vocab.json must be an array");
+    vocab = shuffleItems(loadedVocab);
     await syncInitialReviewState();
     render();
   } catch (error) {
@@ -842,6 +843,17 @@ function renderError(error) {
   empty.className = "empty";
   empty.textContent = `讀取 data/vocab.json 失敗：${error.message}`;
   els.libraryList.append(empty);
+}
+
+function shuffleItems(items) {
+  const shuffled = [...items];
+
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled;
 }
 
 function createClozeReviewCard(item, position, total) {
