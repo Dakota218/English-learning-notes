@@ -1719,5 +1719,672 @@
       "difficulty": "new",
       "history": []
     }
+  },
+  {
+    "id": "2026-07-17-regress",
+    "date": "2026-07-17",
+    "expression": "regress",
+    "type": "verb",
+    "meaning_zh": "退步；倒退回較差或較不進步的狀態",
+    "example": "Without regular practice, it's easy to regress into old habits.",
+    "note_zh": "正式用語，常見搭配為 regress to/into，表示退回先前且較差的狀態。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-retreat-into",
+    "date": "2026-07-17",
+    "expression": "retreat into",
+    "type": "phrasal verb",
+    "meaning_zh": "退回、躲進（安全或熟悉的地方或狀態）",
+    "example": "When things get difficult, we may start regressing and retreat into our comfort zones.",
+    "note_zh": "retreat 本身已有後退之意；此處用 retreat into our comfort zones 較自然，通常不必再加 back。",
+    "tags": [
+      "daily",
+      "conversation",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-manifestation",
+    "date": "2026-07-17",
+    "expression": "manifestation",
+    "type": "noun",
+    "meaning_zh": "表現、顯現；某事存在或發生的跡象",
+    "example": "Her constant fatigue was a manifestation of prolonged stress.",
+    "note_zh": "正式用語，常用 a manifestation of something，指某種情況或特質的外在表現。也可指以想像與肯定語實現願望的「顯化」。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-rightfully",
+    "date": "2026-07-17",
+    "expression": "rightfully",
+    "type": "adverb",
+    "meaning_zh": "理所當然地；合法或正當地",
+    "example": "The award rightfully belongs to the team that did most of the work.",
+    "note_zh": "強調依法律、道德或公平原則本來就應如此。rightly 偏「正確地／合理地」，兩者不完全相同。",
+    "tags": [
+      "daily",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-work-my-ass-off-at-school",
+    "date": "2026-07-17",
+    "expression": "work my ass off at school",
+    "type": "spoken expression",
+    "meaning_zh": "在學校拚命努力、非常用功",
+    "example": "I worked my ass off at school because I wanted to earn a scholarship.",
+    "note_zh": "非常口語且帶粗俗語氣。可依主詞改成 work your/his/her ass off；正式場合可改用 work extremely hard。",
+    "tags": [
+      "conversation",
+      "informal",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-loosely",
+    "date": "2026-07-17",
+    "expression": "loosely",
+    "type": "adverb",
+    "meaning_zh": "鬆散地；不嚴格地；大致上",
+    "example": "The series is loosely based on events from the author's childhood.",
+    "note_zh": "常見 loosely based on（大致根據）與 loosely translated as（大致翻譯為）；也可指綁得不緊。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-edgy",
+    "date": "2026-07-17",
+    "expression": "edgy",
+    "type": "adjective",
+    "meaning_zh": "緊張不安的；前衛而大膽的",
+    "example": "The brand is known for its edgy designs and unconventional campaigns.",
+    "note_zh": "口語中可指緊張、容易煩躁；形容藝術或時尚時，則指新潮、大膽、帶挑戰性。",
+    "tags": [
+      "daily",
+      "conversation",
+      "informal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-stereotypical",
+    "date": "2026-07-17",
+    "expression": "stereotypical",
+    "type": "adjective",
+    "meaning_zh": "刻板印象的；符合一般成見的",
+    "example": "The film avoids the stereotypical portrayal of ambitious women as cold and selfish.",
+    "note_zh": "表示符合人們對某類人事物的固定想像，但這種想像可能不正確。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-stereotype",
+    "date": "2026-07-17",
+    "expression": "stereotype",
+    "type": "noun / verb",
+    "meaning_zh": "刻板印象；對某人或群體抱持或套用刻板印象",
+    "example": "We should avoid stereotyping people based on their age or appearance.",
+    "note_zh": "作名詞是固定且常不正確的觀念；作及物動詞時，表示以這類固定觀念看待某人。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-dictate",
+    "date": "2026-07-17",
+    "expression": "dictate",
+    "type": "verb",
+    "meaning_zh": "支配、決定；命令；口述",
+    "example": "My calendar shouldn't dictate how I feel every single day.",
+    "note_zh": "此例中的 dictate 指「支配、決定」。也可指強勢命令，或把文字口述給別人記下。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-bogged-down-with",
+    "date": "2026-07-17",
+    "expression": "bogged down with",
+    "type": "phrasal verb",
+    "meaning_zh": "被大量事務纏住；因……而陷入忙亂",
+    "example": "I got so bogged down with schoolwork and rigorous training that I forgot to enjoy my life.",
+    "note_zh": "常用 be/get bogged down with/by/in，表示因細節、工作或問題太多而難以前進。",
+    "tags": [
+      "daily",
+      "conversation",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-pathetic",
+    "date": "2026-07-17",
+    "expression": "pathetic",
+    "type": "adjective",
+    "meaning_zh": "可憐的；差勁到令人瞧不起的",
+    "example": "That was a pathetic excuse for missing such an important deadline.",
+    "note_zh": "可表示令人同情，也常帶批評語氣，指表現、藉口或努力差勁；直接形容人時語氣很傷人。",
+    "tags": [
+      "daily",
+      "conversation",
+      "informal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-homogeneous",
+    "date": "2026-07-17",
+    "expression": "homogeneous",
+    "type": "adjective",
+    "meaning_zh": "同質的；由相似或相同類型的部分組成的",
+    "example": "A homogeneous team may struggle to generate a wide range of ideas.",
+    "note_zh": "正式及學術用語，反義詞是 heterogeneous（異質的、多樣的）。",
+    "tags": [
+      "academic",
+      "toefl",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-a-double-edged-sword",
+    "date": "2026-07-17",
+    "expression": "a double-edged sword",
+    "type": "idiom",
+    "meaning_zh": "雙面刃；同時帶來好處與壞處的事物",
+    "example": "Social media is a double-edged sword: it connects people but can also increase anxiety.",
+    "note_zh": "比喻某事既有優點也有缺點，常用 something is/can be a double-edged sword。",
+    "tags": [
+      "daily",
+      "academic",
+      "idiom"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-lucrative",
+    "date": "2026-07-17",
+    "expression": "lucrative",
+    "type": "adjective",
+    "meaning_zh": "賺錢的；獲利豐厚的",
+    "example": "She left a lucrative corporate job to start a nonprofit.",
+    "note_zh": "常修飾 job、career、business、market、contract 等，重點是能帶來大量金錢或利潤。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-curated",
+    "date": "2026-07-17",
+    "expression": "curated",
+    "type": "adjective",
+    "meaning_zh": "經過精心挑選與編排的",
+    "example": "The newsletter offers a curated selection of articles on technology and design.",
+    "note_zh": "來自 curate；現在常用於內容、商品、播放清單或體驗，強調有目的地挑選與整理。",
+    "tags": [
+      "daily",
+      "writing",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-curative",
+    "date": "2026-07-17",
+    "expression": "curative",
+    "type": "adjective",
+    "meaning_zh": "能治療的；有療效的",
+    "example": "The treatment can relieve symptoms, but it is not curative.",
+    "note_zh": "主要用於醫療語境，表示能治癒疾病；不同於 curated（經挑選整理的），兩者拼寫相近但意思無關。",
+    "tags": [
+      "academic",
+      "formal",
+      "hard"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-vibrant-metropolis",
+    "date": "2026-07-17",
+    "expression": "vibrant metropolis",
+    "type": "collocation",
+    "meaning_zh": "充滿活力的大都市",
+    "example": "Taipei is a vibrant metropolis known for its night markets, creative culture, and convenient transit.",
+    "note_zh": "vibrant 表示充滿活力與色彩，metropolis 指規模大且重要的城市；適合旅遊、城市與 TOEFL 描述。",
+    "tags": [
+      "toefl",
+      "speaking",
+      "collocation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-nihilistic",
+    "date": "2026-07-17",
+    "expression": "nihilistic",
+    "type": "adjective",
+    "meaning_zh": "虛無主義的；認為人生、原則或信念沒有意義的",
+    "example": "The novel's nihilistic tone makes its world feel bleak and hopeless.",
+    "note_zh": "較正式且常見於哲學、電影及文學評論；來自 nihilism（虛無主義）。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-diversify",
+    "date": "2026-07-17",
+    "expression": "diversify",
+    "type": "verb",
+    "meaning_zh": "使多樣化；拓展不同產品、活動或投資",
+    "example": "The company is trying to diversify its revenue streams before entering a new market.",
+    "note_zh": "可作及物或不及物動詞；投資語境常說 diversify a portfolio，以分散風險。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-covet",
+    "date": "2026-07-17",
+    "expression": "covet",
+    "type": "verb",
+    "meaning_zh": "貪求；覬覦；非常渴望擁有",
+    "example": "Many young professionals covet jobs that offer both flexibility and purpose.",
+    "note_zh": "較正式，常指強烈想得到別人擁有或難以取得的東西；語氣往往帶有羨慕或貪求意味。",
+    "tags": [
+      "academic",
+      "writing",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-millennial",
+    "date": "2026-07-17",
+    "expression": "millennial",
+    "type": "noun / adjective",
+    "meaning_zh": "千禧世代的人；千禧世代的",
+    "example": "Many millennials entered the workforce during a period of rapid technological change.",
+    "note_zh": "作名詞常指約 1981 至 1996 年出生的人；也可作形容詞。世代界線是約略範圍。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-detour",
+    "date": "2026-07-17",
+    "expression": "detour",
+    "type": "noun / verb",
+    "meaning_zh": "繞道；繞路；人生或計畫中的曲折",
+    "example": "No step is taken in vain; even the detours can lead us to beautiful places.",
+    "note_zh": "可指因道路受阻而改走的路線，也常比喻偏離原計畫的經歷。作動詞時表示繞道而行。",
+    "tags": [
+      "daily",
+      "writing",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-rejuvenate",
+    "date": "2026-07-17",
+    "expression": "rejuvenate",
+    "type": "verb",
+    "meaning_zh": "使恢復青春或活力；使重新振興",
+    "example": "A quiet weekend by the sea helped rejuvenate her after a stressful month.",
+    "note_zh": "可用於人、組織、品牌、社區或經濟，表示重新注入活力、改善狀態。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-chameleon",
+    "date": "2026-07-17",
+    "expression": "chameleon",
+    "type": "noun",
+    "meaning_zh": "變色龍；善於改變言行以迎合他人的人",
+    "example": "He is a social chameleon who adapts quickly to every group he joins.",
+    "note_zh": "除動物本義外，也可比喻會依環境改變個性、意見或行為的人。",
+    "tags": [
+      "daily",
+      "conversation",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-clingy",
+    "date": "2026-07-17",
+    "expression": "clingy",
+    "type": "adjective",
+    "meaning_zh": "過度依賴或黏人的",
+    "example": "I care about him, but the constant messages are starting to feel clingy.",
+    "note_zh": "非正式用語，形容在人際或感情關係中過度需要陪伴、關注或安撫。",
+    "tags": [
+      "conversation",
+      "informal",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-grumble",
+    "date": "2026-07-17",
+    "expression": "grumble",
+    "type": "verb / noun",
+    "meaning_zh": "抱怨、嘟囔；怨言",
+    "example": "Everyone grumbled about the early meeting, but they still showed up on time.",
+    "note_zh": "作動詞常指用低沉、不滿的聲音抱怨；常見 grumble about/at。也可作可數名詞。",
+    "tags": [
+      "daily",
+      "conversation",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-make-the-first-move",
+    "date": "2026-07-17",
+    "expression": "make the first move",
+    "type": "idiom",
+    "meaning_zh": "主動採取第一步；率先示好或開啟對話",
+    "example": "Neither of us wanted the friendship to end, so I decided to make the first move and apologize.",
+    "note_zh": "常用於感情、人際關係、談判或競爭，表示先採取行動。",
+    "tags": [
+      "daily",
+      "conversation",
+      "idiom"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-07-17-epiphany",
+    "date": "2026-07-17",
+    "expression": "epiphany",
+    "type": "noun",
+    "meaning_zh": "頓悟；突然明白重要事情的時刻",
+    "example": "I had an epiphany and realized that being busy was not the same as making progress.",
+    "note_zh": "常用 have an epiphany，指突然產生清楚而重要的領悟；原本也可指宗教上的神性顯現。",
+    "tags": [
+      "daily",
+      "academic",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-07-17",
+      "last_reviewed": null,
+      "next_review": "2026-07-18",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
   }
 ]
