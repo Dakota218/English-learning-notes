@@ -2386,5 +2386,532 @@
       "difficulty": "new",
       "history": []
     }
+  },
+  {
+    "id": "2026-08-27-pivotal",
+    "date": "2026-08-27",
+    "expression": "pivotal",
+    "type": "adjective",
+    "meaning_zh": "關鍵的、極重要的、起樞紐作用的",
+    "example": "A pivotal figure in the negotiations, she managed to bring both sides to an agreement.",
+    "note_zh": "形容人、事物或時刻對於後續的發展有著至關重要的決定性影響。常見搭配如 a pivotal role (關鍵角色)、a pivotal moment (關鍵時刻)。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-resourceful",
+    "date": "2026-08-27",
+    "expression": "resourceful",
+    "type": "adjective",
+    "meaning_zh": "足智多謀的、資源豐富的、善於解決問題的",
+    "example": "She is a resourceful manager who always finds a creative way to get things done despite a tight budget.",
+    "note_zh": "指一個人在面對困難或資源匱乏時，能迅速想出辦法解決問題。",
+    "tags": [
+      "daily",
+      "speaking",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-exceptional",
+    "date": "2026-08-27",
+    "expression": "exceptional",
+    "type": "adjective",
+    "meaning_zh": "卓越的、傑出的、非凡的；異常的",
+    "example": "The young pianist showed exceptional talent from an early age.",
+    "note_zh": "通常指「遠超一般水準的優秀」，常用於形容才能、表現或品質。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-intricate",
+    "date": "2026-08-27",
+    "expression": "intricate",
+    "type": "adjective",
+    "meaning_zh": "錯綜複雜的、精細的",
+    "example": "The watchmaker designed an intricate system of gears to keep perfect time.",
+    "note_zh": "強調許多細微部分以複雜或精巧的方式交織、排列在一起，常用於形容圖案、結構或計畫。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-feisty",
+    "date": "2026-08-27",
+    "expression": "feisty",
+    "type": "adjective",
+    "meaning_zh": "精力充沛的、好強的、有決心的",
+    "example": "The team played a feisty game, refusing to be intimidated by their larger opponents.",
+    "note_zh": "形容人或動物雖然可能處於劣勢，但依然表現得十分活躍、頑強且不服輸。帶有非正式色彩。",
+    "tags": [
+      "daily",
+      "conversation",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-pathetic",
+    "date": "2026-08-27",
+    "expression": "pathetic",
+    "type": "adjective",
+    "meaning_zh": "可憐的、可悲的；差勁的、無用的",
+    "example": "It was a pathetic excuse for not doing the homework, and the teacher didn't buy it at all.",
+    "note_zh": "有兩種主要語境：一是因軟弱、不幸而令人同情可憐；二是表示某人的表現、藉口或能力極差，令人感到不屑或失望。",
+    "tags": [
+      "daily",
+      "conversation",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-gab",
+    "date": "2026-08-27",
+    "expression": "gab",
+    "type": "verb / noun",
+    "meaning_zh": "閒聊、喋喋不休",
+    "example": "They spent the entire afternoon gabbing about their high school days.",
+    "note_zh": "非正式口語。常用片語為 have the gift of the gab，意指口才好、能言善道。",
+    "tags": [
+      "daily",
+      "conversation",
+      "informal",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-smother",
+    "date": "2026-08-27",
+    "expression": "smother",
+    "type": "verb",
+    "meaning_zh": "使窒息、悶死；抑制、壓制；過度溺愛（使人透不過氣）",
+    "example": "I love my parents, but sometimes their constant checking feels like they are trying to smother me.",
+    "note_zh": "除了物理上的「使窒息」或「用某物覆蓋」之外，在日常生活中常比喻以過度的愛、關心或控制欲讓對方感到窒息。",
+    "tags": [
+      "daily",
+      "conversation",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-instinctually",
+    "date": "2026-08-27",
+    "expression": "instinctually",
+    "type": "adverb",
+    "meaning_zh": "本能地、直覺地",
+    "example": "When the alarm went off, she instinctually grabbed her bag and headed for the exit.",
+    "note_zh": "指不需要經過理性思考或計畫，而是自發、出自天生地做出反應。來自形容詞 instinctual（本能的）。",
+    "tags": [
+      "daily",
+      "academic",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-inclined",
+    "date": "2026-08-27",
+    "expression": "inclined",
+    "type": "adjective",
+    "meaning_zh": "傾向於...的、有...意願的；有天份的",
+    "example": "I am inclined to agree with your analysis, though I still have a few minor reservations.",
+    "note_zh": "常用結構為 be inclined to do something（傾向於做某事）或 be inclined to believe/think（傾向於相信/認為）。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-vintage-disney",
+    "date": "2026-08-27",
+    "expression": "vintage Disney",
+    "type": "noun / phrase",
+    "meaning_zh": "經典迪士尼、復古迪士尼",
+    "example": "The store specializes in selling vintage Disney merchandise from the 1950s and 60s.",
+    "note_zh": "vintage 指過去生產且具代表性或經典性的事物。vintage Disney 通常指迪士尼黃金時代的經典作品或復古周邊商品。",
+    "tags": [
+      "daily",
+      "conversation"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-inevitable",
+    "date": "2026-08-27",
+    "expression": "inevitable",
+    "type": "adjective",
+    "meaning_zh": "不可避免的、必然發生的",
+    "example": "With the rapid growth of the company, a reorganization was inevitable.",
+    "note_zh": "指事情必定會發生，無法逃避或預防。常用來討論趨勢、歷史或無法改變的結果。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-evitable",
+    "date": "2026-08-27",
+    "expression": "evitable",
+    "type": "adjective",
+    "meaning_zh": "可避免的",
+    "example": "Although the disaster was severe, many experts argue it was evitable if safety standards had been enforced.",
+    "note_zh": "inevitable（不可避免）的反義詞，表示可以被阻止或避免的事情。使用頻率較低，常用於強調某些錯誤本可避免。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-badass",
+    "date": "2026-08-27",
+    "expression": "badass",
+    "type": "adjective / noun",
+    "meaning_zh": "酷斃的、厲害的；硬漢、很酷的人（非正式）",
+    "example": "He plays a badass detective who takes down criminals without following the traditional rules.",
+    "note_zh": "美式非正式用語，帶有強烈的口語色彩。可以用作形容詞表示「極酷、極厲害」，或名詞指「很有個性、很強悍的人」。",
+    "tags": [
+      "conversation",
+      "informal",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-sobriety-sober",
+    "date": "2026-08-27",
+    "expression": "sobriety / sober",
+    "type": "noun / adjective",
+    "meaning_zh": "清醒（未醉酒）、持重；清醒的、沒喝醉的、嚴肅的",
+    "example": "The doctor emphasized that maintaining sobriety is the most critical part of the recovery process.",
+    "note_zh": "sobriety 是名詞，指「未受酒精或藥物影響的清醒狀態」；sober 是其形容詞。在正式語境中也可以指態度、舉止的莊重與嚴肅。",
+    "tags": [
+      "daily",
+      "formal"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-savage",
+    "date": "2026-08-27",
+    "expression": "savage",
+    "type": "adjective / verb",
+    "meaning_zh": "野蠻的、兇猛的、殘暴的；猛烈抨擊",
+    "example": "The company's new policy faced savage criticism from both the public and its employees.",
+    "note_zh": "形容詞指「野蠻、未開化」或「極度兇猛、殘暴」。在現代口語中，也常用作流行語，形容某人的言行「很狠、不留情面、酷得令人震驚」。",
+    "tags": [
+      "daily",
+      "conversation",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-be-ignorant-of",
+    "date": "2026-08-27",
+    "expression": "be ignorant of",
+    "type": "phrase",
+    "meaning_zh": "對...是一無所知的、不知道的",
+    "example": "Many travelers are ignorant of the local customs, which can sometimes lead to misunderstandings.",
+    "note_zh": "表示缺乏某方面的知識或資訊。ignorant 的語氣有時較為負面（指無知），但 be ignorant of 也可單純表示「不知情」。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-be-at-the-mercy-of",
+    "date": "2026-08-27",
+    "expression": "be at the mercy of",
+    "type": "phrase",
+    "meaning_zh": "任憑...擺佈、受...支配",
+    "example": "You are at the mercy of the things that you can’t control, so focus on how you react to them instead.",
+    "note_zh": "指完全處於某人或某種無法控制的力量（如天氣、命運、市場等）支配之下，沒有自我保護的能力。原句：You are at the mercy of the things that you can’t control.",
+    "tags": [
+      "daily",
+      "conversation",
+      "useful-expression"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-clutter-declutter",
+    "date": "2026-08-27",
+    "expression": "clutter / declutter",
+    "type": "verb / noun",
+    "meaning_zh": "堆積、雜亂；清除雜物、整理",
+    "example": "I spent the entire weekend trying to declutter my bedroom to create a better working environment.",
+    "note_zh": "clutter 可作動詞指「使雜亂」，名詞指「雜亂無章的雜物」。declutter 則是動詞，指清理、丟棄不需要的物品以使空間整潔。",
+    "tags": [
+      "daily",
+      "conversation",
+      "speaking"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-revelation",
+    "date": "2026-08-27",
+    "expression": "revelation",
+    "type": "noun",
+    "meaning_zh": "揭露、透露（不為人知的內幕）；啟示、出乎意料的好發現",
+    "example": "The investigative report contains shocking revelations about the company's financial practices.",
+    "note_zh": "常指被揭露出來的秘密或事實。如果說某個事物 is a revelation to someone，表示該事物非常好，給人帶來全新的認識或驚喜。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-obliging",
+    "date": "2026-08-27",
+    "expression": "obliging",
+    "type": "adjective",
+    "meaning_zh": "樂於助人的、熱心協助的",
+    "example": "The hotel staff were exceptionally obliging, offering to carry our luggage and book our tickets.",
+    "note_zh": "正式與文學用語，形容人非常熱意幫忙或滿足他人的需求。",
+    "tags": [
+      "daily",
+      "formal",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-ethnicity",
+    "date": "2026-08-27",
+    "expression": "ethnicity",
+    "type": "noun",
+    "meaning_zh": "種族、族裔",
+    "example": "The census questionnaire asks for information regarding race and ethnicity.",
+    "note_zh": "指基於共同的文化、語言、歷史、傳統等形成的社會群體（族群），與單純指生物學特徵的 race（種族）有所區別。",
+    "tags": [
+      "daily",
+      "academic",
+      "writing"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
+  },
+  {
+    "id": "2026-08-27-kinesthetic",
+    "date": "2026-08-27",
+    "expression": "kinesthetic",
+    "type": "adjective",
+    "meaning_zh": "動覺的、身體運動感覺的",
+    "example": "Kinesthetic learners absorb information best when they can perform physical activities rather than just listening to lectures.",
+    "note_zh": "心理學與教育學用語，與身體感官的動作和運動有關。常見搭配如 kinesthetic learning (動覺學習) 或 kinesthetic learner (動覺型學習者)。",
+    "tags": [
+      "academic",
+      "toefl"
+    ],
+    "review": {
+      "stage": 0,
+      "first_seen": "2026-08-27",
+      "last_reviewed": null,
+      "next_review": "2026-08-28",
+      "review_count": 0,
+      "difficulty": "new",
+      "history": []
+    }
   }
 ]
