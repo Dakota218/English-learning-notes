@@ -29,8 +29,18 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid rgba(2, 132, 199, 0.28);
+  outline-offset: 2px;
 }
 
 .app-header {
@@ -304,6 +314,194 @@ main {
 .panel {
   border-top: 1px solid var(--line);
   padding: 26px 0;
+}
+
+.add-panel {
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f0f9ff, #ffffff);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.add-words-form {
+  display: grid;
+  gap: 8px;
+}
+
+.add-words-form label,
+.edit-form label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px 12px;
+  line-height: 1.55;
+}
+
+.form-footer,
+.dialog-actions,
+.dialog-actions > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-status {
+  min-height: 1.5em;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.primary-btn,
+.secondary-btn,
+.danger-btn,
+.card-edit-btn,
+.icon-btn {
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 8px 14px;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: white;
+}
+
+.secondary-btn,
+.card-edit-btn,
+.icon-btn {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.danger-btn {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.card-edit-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.review-front .card-edit-btn {
+  width: auto;
+  margin-top: 28px;
+}
+
+.library-edit-btn {
+  width: auto;
+  min-height: 32px;
+  margin: 0;
+  padding: 3px 9px;
+  font-size: 0.78rem;
+}
+
+.word-card {
+  cursor: pointer;
+}
+
+.edit-dialog {
+  width: min(760px, calc(100% - 28px));
+  max-height: calc(100vh - 32px);
+  border: 0;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
+}
+
+.edit-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.edit-form {
+  padding: 22px;
+  overflow-y: auto;
+}
+
+.dialog-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.icon-btn {
+  width: 42px;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.edit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.wide-field {
+  grid-column: 1 / -1;
+}
+
+.image-editor {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.image-editor p {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.image-paste-area {
+  display: grid;
+  place-items: center;
+  min-height: 92px;
+  border: 2px dashed #7dd3fc;
+  border-radius: 10px;
+  background: #f0f9ff;
+  color: var(--accent-dark);
+  cursor: text;
+  font-weight: 700;
+}
+
+.image-preview,
+.review-image {
+  display: block;
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.review-image {
+  margin: 12px auto 0;
+}
+
+.is-hidden {
+  display: none !important;
 }
 
 .section-heading {
@@ -833,9 +1031,36 @@ select:focus {
   }
 
   input,
-  select {
+  select,
+  textarea {
     min-height: 48px;
     font-size: 1rem;
+  }
+
+  .add-panel,
+  .edit-form {
+    padding: 16px;
+  }
+
+  .edit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wide-field {
+    grid-column: auto;
+  }
+
+  .form-footer,
+  .dialog-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-footer .primary-btn,
+  .dialog-actions > button,
+  .dialog-actions > div,
+  .dialog-actions > div button {
+    width: 100%;
   }
 }
 
@@ -937,4 +1162,3 @@ select:focus {
 .cloze-continue-btn:hover {
   opacity: 0.9;
 }
-

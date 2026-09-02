@@ -1,6 +1,10 @@
 const DATA_URL = "data/vocab.json";
 const REVIEW_API_URL = getReviewApiUrl();
+const VOCAB_API_URL = getApiUrl("vocab-data");
+const VOCAB_IMAGE_API_URL = getApiUrl("vocab-image");
 const STORAGE_KEY = "english-review-state-v1";
+const VOCAB_STORAGE_KEY = "english-vocab-data-v1";
+const DELETED_VOCAB_STORAGE_KEY = "english-vocab-deleted-ids-v1";
 const SYNC_KEY_STORAGE_KEY = "english-review-sync-key";
 const DAY_MS = 24 * 60 * 60 * 1000;
 const REVIEW_INTERVALS = {
@@ -15,6 +19,9 @@ let vocab = [];
 let reviewState = loadReviewState();
 let reviewedThisSession = new Set();
 let reviewMode = localStorage.getItem("english-review-mode") || "card";
+let pendingImageDataUrl = null;
+let removePendingImage = false;
+let deletedVocabIds = loadDeletedVocabIds();
 
 const els = {
   todayLabel: document.querySelector("#todayLabel"),
@@ -47,12 +54,41 @@ const els = {
   tagStats: document.querySelector("#tagStats"),
   forgetList: document.querySelector("#forgetList"),
   template: document.querySelector("#wordCardTemplate"),
-  libraryTemplate: document.querySelector("#libraryItemTemplate")
+  libraryTemplate: document.querySelector("#libraryItemTemplate"),
+  addWordsForm: document.querySelector("#addWordsForm"),
+  addWordsInput: document.querySelector("#addWordsInput"),
+  addWordsStatus: document.querySelector("#addWordsStatus"),
+  editDialog: document.querySelector("#editDialog"),
+  editForm: document.querySelector("#editForm"),
+  editId: document.querySelector("#editId"),
+  editExpression: document.querySelector("#editExpression"),
+  editType: document.querySelector("#editType"),
+  editMeaning: document.querySelector("#editMeaning"),
+  editExample: document.querySelector("#editExample"),
+  editNote: document.querySelector("#editNote"),
+  editTags: document.querySelector("#editTags"),
+  editStatus: document.querySelector("#editStatus"),
+  imagePasteArea: document.querySelector("#imagePasteArea"),
+  imagePreview: document.querySelector("#imagePreview"),
+  removeImageBtn: document.querySelector("#removeImageBtn"),
+  deleteCardBtn: document.querySelector("#deleteCardBtn"),
+  closeEditBtn: document.querySelector("#closeEditBtn"),
+  cancelEditBtn: document.querySelector("#cancelEditBtn")
 };
 
 document.addEventListener("DOMContentLoaded", init);
 els.searchInput.addEventListener("input", render);
 els.filterSelect.addEventListener("change", render);
+els.addWordsForm.addEventListener("submit", addDailyWords);
+els.editForm.addEventListener("submit", saveCardEdits);
+els.imagePasteArea.addEventListener("paste", handleImagePaste);
+els.removeImageBtn.addEventListener("click", markImageForRemoval);
+els.deleteCardBtn.addEventListener("click", deleteCurrentCard);
+els.closeEditBtn.addEventListener("click", closeEditDialog);
+els.cancelEditBtn.addEventListener("click", closeEditDialog);
+els.editDialog.addEventListener("click", (event) => {
+  if (event.target === els.editDialog) closeEditDialog();
+});
 
 async function init() {
   els.todayLabel.textContent = todayISO();
@@ -92,7 +128,7 @@ async function init() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const loadedVocab = await response.json();
     if (!Array.isArray(loadedVocab)) throw new Error("vocab.json must be an array");
-    vocab = shuffleItems(loadedVocab);
+    vocab = await loadVocabData(loadedVocab);
     await syncInitialReviewState();
     render();
   } catch (error) {
@@ -235,6 +271,13 @@ function createCard(item, options = {}) {
     actions.remove();
   }
 
+  const editButton = node.querySelector(".card-edit-btn");
+  editButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    openEditDialog(item.id);
+  });
+  node.addEventListener("click", () => openEditDialog(item.id));
+
   return node;
 }
 
@@ -256,7 +299,7 @@ function createReviewCard(item, position, total) {
   const expression = document.createElement("h3");
   expression.textContent = item.expression || "";
 
-  front.append(progress, expression);
+  front.append(progress, expression, createEditButton(item.id));
 
   const back = document.createElement("div");
   back.className = "review-face review-back";
@@ -273,6 +316,13 @@ function createReviewCard(item, position, total) {
   note.className = "note";
   note.textContent = item.note_zh || "";
 
+  const reviewImage = item.image ? document.createElement("img") : null;
+  if (reviewImage) {
+    reviewImage.className = "review-image";
+    reviewImage.src = `${getImageUrl(item.id)}?v=${encodeURIComponent(item.image_updated_at || "1")}`;
+    reviewImage.alt = `${item.expression || "詞彙"} 的複習圖片`;
+  }
+
   const meta = document.createElement("p");
   meta.className = "review-card-meta";
   meta.textContent = `階段 ${review.stage ?? 0} · 下次複習 ${review.next_review || "未排程"}`;
@@ -285,7 +335,11 @@ function createReviewCard(item, position, total) {
     createReviewButton("記得", "remembered", item)
   );
 
-  back.append(meaning, example, note, meta, actions);
+  const editButton = createEditButton(item.id);
+
+  back.append(meaning, example, note);
+  if (reviewImage) back.append(reviewImage);
+  back.append(meta, actions, editButton);
   card.append(front, back);
 
   card.addEventListener("click", () => flipReviewCard(card));
@@ -310,6 +364,18 @@ function createReviewButton(label, result, item) {
     updateReview(item, result);
     reviewedThisSession.add(item.id);
     render();
+  });
+  return button;
+}
+
+function createEditButton(itemId) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "card-edit-btn";
+  button.textContent = "編輯字卡";
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    openEditDialog(itemId);
   });
   return button;
 }
@@ -381,6 +447,11 @@ function createLibraryItem(item) {
   // 阻止細節區塊內部的點擊事件冒泡，避免選取或點選細節文字時導致折疊
   detail.addEventListener("click", (event) => {
     event.stopPropagation();
+  });
+
+  node.querySelector(".card-edit-btn").addEventListener("click", (event) => {
+    event.stopPropagation();
+    openEditDialog(item.id);
   });
 
   return node;
@@ -460,6 +531,383 @@ function buildFlexibleExpressionPattern(expression) {
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+async function loadVocabData(staticVocab) {
+  const localVocab = loadLocalVocab();
+
+  try {
+    const response = await fetchWithSyncKey(VOCAB_API_URL);
+    if (!response.ok) throw new Error(`Vocab HTTP ${response.status}`);
+    const payload = await response.json();
+
+    if (Array.isArray(payload.vocab)) {
+      deletedVocabIds = Array.isArray(payload.deletedIds) ? payload.deletedIds : [];
+      saveDeletedVocabIds();
+      const remoteIds = new Set(payload.vocab.map((item) => item.id));
+      const deletedIds = new Set(deletedVocabIds);
+      const staticAdditions = staticVocab.filter((item) => !remoteIds.has(item.id) && !deletedIds.has(item.id));
+      const mergedVocab = [...payload.vocab, ...staticAdditions];
+      vocab = mergedVocab;
+      saveLocalVocab(mergedVocab);
+      if (staticAdditions.length) await saveVocabData({ silent: true });
+      return shuffleItems(mergedVocab);
+    }
+
+    const initialVocab = Array.isArray(localVocab) ? localVocab : staticVocab;
+    vocab = initialVocab;
+    await saveVocabData({ silent: true });
+    return shuffleItems(initialVocab);
+  } catch {
+    return shuffleItems(Array.isArray(localVocab) ? localVocab : staticVocab);
+  }
+}
+
+function loadLocalVocab() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(VOCAB_STORAGE_KEY));
+    return Array.isArray(saved) ? saved : null;
+  } catch {
+    return null;
+  }
+}
+
+function loadDeletedVocabIds() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(DELETED_VOCAB_STORAGE_KEY));
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveDeletedVocabIds() {
+  localStorage.setItem(DELETED_VOCAB_STORAGE_KEY, JSON.stringify(deletedVocabIds));
+}
+
+function saveLocalVocab(items = vocab) {
+  try {
+    localStorage.setItem(VOCAB_STORAGE_KEY, JSON.stringify(items));
+  } catch {
+    setSyncStatus("圖片或資料較大，無法暫存本機", "error");
+  }
+}
+
+async function saveVocabData(options = {}) {
+  saveLocalVocab();
+  if (!options.silent) setSyncStatus("同步中...", "syncing");
+
+  try {
+    const response = await fetchWithSyncKey(VOCAB_API_URL, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ vocab, deletedIds: deletedVocabIds })
+    });
+    if (!response.ok) throw new Error(`Vocab HTTP ${response.status}`);
+    if (!options.silent) setSyncStatus("雲端同步完成", "synced");
+    return true;
+  } catch {
+    if (!options.silent) setSyncStatus("同步失敗，已暫存本機", "error");
+    return false;
+  }
+}
+
+async function fetchWithSyncKey(url, options = {}, retry = true) {
+  const headers = {
+    ...options.headers,
+    ...getSyncHeaders()
+  };
+  const response = await fetch(url, { ...options, headers });
+
+  if (response.status === 401 && retry) {
+    localStorage.removeItem(SYNC_KEY_STORAGE_KEY);
+    const syncKey = prompt("請輸入同步密碼");
+    if (!syncKey) return response;
+    localStorage.setItem(SYNC_KEY_STORAGE_KEY, syncKey);
+    return fetchWithSyncKey(url, options, false);
+  }
+
+  return response;
+}
+
+async function addDailyWords(event) {
+  event.preventDefault();
+  const expressions = parseExpressionLines(els.addWordsInput.value);
+  const today = todayISO();
+  const existing = new Set(
+    vocab
+      .filter((item) => item.date === today)
+      .map((item) => normalizeExpression(item.expression))
+  );
+  const uniqueInput = [];
+
+  for (const expression of expressions) {
+    const normalized = normalizeExpression(expression);
+    if (normalized && !existing.has(normalized)) {
+      existing.add(normalized);
+      uniqueInput.push(expression);
+    }
+  }
+
+  if (uniqueInput.length === 0) {
+    els.addWordsStatus.textContent = expressions.length ? "今天已經有相同的單字。" : "請至少輸入一個單字或片語。";
+    return;
+  }
+
+  const newItems = uniqueInput.map((expression) => createNewVocabItem(expression, today));
+  vocab = [...newItems, ...vocab];
+  render();
+  els.addWordsStatus.textContent = "正在儲存…";
+  const synced = await saveVocabData();
+  els.addWordsInput.value = "";
+  const skipped = expressions.length - uniqueInput.length;
+  els.addWordsStatus.textContent = `已新增 ${uniqueInput.length} 筆${skipped ? `，略過 ${skipped} 筆重複內容` : ""}${synced ? "。" : "；目前先保存在這台裝置。"}`;
+}
+
+function parseExpressionLines(value) {
+  return value
+    .replace(/\u2028|\u2029/g, "\n")
+    .replace(/&(?:#x20|#32|nbsp);/gi, " ")
+    .split(/\r?\n/)
+    .map((line) => line.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+
+function normalizeExpression(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/[.!?]+$/g, "");
+}
+
+function createNewVocabItem(expression, date) {
+  return {
+    id: createUniqueId(date, expression),
+    date,
+    expression,
+    type: "expression",
+    meaning_zh: "",
+    example: "",
+    note_zh: "",
+    tags: ["daily"],
+    review: {
+      stage: 0,
+      first_seen: date,
+      last_reviewed: null,
+      next_review: addDays(date, 1),
+      review_count: 0,
+      difficulty: "new",
+      history: []
+    }
+  };
+}
+
+function createUniqueId(date, expression) {
+  const baseSlug = expression
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || "expression";
+  const base = `${date}-${baseSlug}`;
+  const ids = new Set(vocab.map((item) => item.id));
+  let candidate = base;
+  let suffix = 2;
+  while (ids.has(candidate)) {
+    candidate = `${base}-${suffix}`;
+    suffix += 1;
+  }
+  return candidate;
+}
+
+function openEditDialog(itemId) {
+  const item = vocab.find((entry) => entry.id === itemId);
+  if (!item) return;
+
+  pendingImageDataUrl = null;
+  removePendingImage = false;
+  els.editId.value = item.id;
+  els.editExpression.value = item.expression || "";
+  els.editType.value = item.type || "";
+  els.editMeaning.value = item.meaning_zh || "";
+  els.editExample.value = item.example || "";
+  els.editNote.value = item.note_zh || "";
+  els.editTags.value = (item.tags || []).join(", ");
+  els.editStatus.textContent = "";
+  updateImagePreview(item.image ? `${getImageUrl(item.id)}?v=${Date.now()}` : "");
+  els.editDialog.showModal();
+}
+
+function closeEditDialog() {
+  pendingImageDataUrl = null;
+  removePendingImage = false;
+  els.editDialog.close();
+}
+
+async function saveCardEdits(event) {
+  event.preventDefault();
+  const itemId = els.editId.value;
+  const index = vocab.findIndex((item) => item.id === itemId);
+  if (index < 0) return;
+
+  const expression = els.editExpression.value.replace(/\s+/g, " ").trim();
+  if (!expression) {
+    els.editStatus.textContent = "單字或片語不能留白。";
+    return;
+  }
+
+  els.editStatus.textContent = "正在儲存…";
+  const updated = {
+    ...vocab[index],
+    expression,
+    type: els.editType.value.trim() || "expression",
+    meaning_zh: els.editMeaning.value.trim(),
+    example: els.editExample.value.trim(),
+    note_zh: els.editNote.value.trim(),
+    tags: parseTags(els.editTags.value)
+  };
+
+  try {
+    if (pendingImageDataUrl) {
+      await saveCardImage(itemId, pendingImageDataUrl);
+      updated.image = true;
+      updated.image_updated_at = new Date().toISOString();
+    } else if (removePendingImage) {
+      await removeCardImage(itemId);
+      delete updated.image;
+      delete updated.image_updated_at;
+    }
+
+    vocab[index] = updated;
+    const synced = await saveVocabData();
+    render();
+    closeEditDialog();
+    if (!synced) setSyncStatus("同步失敗，已暫存本機", "error");
+  } catch (error) {
+    els.editStatus.textContent = error.message || "圖片或字卡儲存失敗，請再試一次。";
+  }
+}
+
+function parseTags(value) {
+  return [...new Set(
+    value
+      .split(/[,，]/)
+      .map((tag) => tag.trim().toLowerCase().replace(/\s+/g, "-"))
+      .filter(Boolean)
+  )];
+}
+
+async function deleteCurrentCard() {
+  const itemId = els.editId.value;
+  const item = vocab.find((entry) => entry.id === itemId);
+  if (!item || !confirm(`確定要刪除「${item.expression}」嗎？這個動作無法復原。`)) return;
+
+  els.editStatus.textContent = "正在刪除…";
+  try {
+    if (item.image) await removeCardImage(itemId);
+    vocab = vocab.filter((entry) => entry.id !== itemId);
+    deletedVocabIds = [...new Set([...deletedVocabIds, itemId])];
+    saveDeletedVocabIds();
+    delete reviewState[itemId];
+    saveReviewState();
+    await Promise.all([saveVocabData(), saveRemoteReviewState({ silent: true })]);
+    reviewedThisSession.delete(itemId);
+    render();
+    closeEditDialog();
+  } catch (error) {
+    els.editStatus.textContent = error.message || "刪除失敗，請再試一次。";
+  }
+}
+
+async function handleImagePaste(event) {
+  const imageFile = [...event.clipboardData.items]
+    .find((item) => item.type.startsWith("image/"))
+    ?.getAsFile();
+  if (!imageFile) {
+    els.editStatus.textContent = "剪貼簿裡沒有可用的圖片。";
+    return;
+  }
+
+  event.preventDefault();
+  els.editStatus.textContent = "正在處理圖片…";
+  try {
+    pendingImageDataUrl = await resizeImage(imageFile);
+    removePendingImage = false;
+    updateImagePreview(pendingImageDataUrl);
+    els.editStatus.textContent = "圖片已貼上，請按「儲存變更」。";
+  } catch {
+    els.editStatus.textContent = "無法讀取這張圖片，請改用 PNG、JPG、WebP 或 GIF。";
+  }
+}
+
+function resizeImage(file) {
+  if (file.type === "image/gif") return readFileAsDataUrl(file);
+
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => {
+      const image = new Image();
+      image.onerror = reject;
+      image.onload = () => {
+        const maxSide = 1600;
+        const scale = Math.min(1, maxSide / Math.max(image.width, image.height));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.max(1, Math.round(image.width * scale));
+        canvas.height = Math.max(1, Math.round(image.height * scale));
+        canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL("image/jpeg", 0.86));
+      };
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(file);
+  });
+}
+
+function markImageForRemoval() {
+  pendingImageDataUrl = null;
+  removePendingImage = true;
+  updateImagePreview("");
+  els.editStatus.textContent = "圖片將在儲存後移除。";
+}
+
+function updateImagePreview(src) {
+  if (src) {
+    els.imagePreview.src = src;
+    els.imagePreview.classList.remove("is-hidden");
+    els.removeImageBtn.classList.remove("is-hidden");
+  } else {
+    els.imagePreview.removeAttribute("src");
+    els.imagePreview.classList.add("is-hidden");
+    els.removeImageBtn.classList.add("is-hidden");
+  }
+}
+
+async function saveCardImage(itemId, dataUrl) {
+  const response = await fetchWithSyncKey(getImageUrl(itemId), {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ dataUrl })
+  });
+  if (!response.ok) throw new Error("圖片儲存失敗，請確認圖片大小後再試一次。");
+}
+
+async function removeCardImage(itemId) {
+  const response = await fetchWithSyncKey(getImageUrl(itemId), { method: "DELETE" });
+  if (!response.ok && response.status !== 404) throw new Error("圖片移除失敗，請再試一次。");
+}
+
+function getImageUrl(itemId) {
+  return `${VOCAB_IMAGE_API_URL}/${encodeURIComponent(itemId)}`;
 }
 
 function updateReview(item, result) {
@@ -755,11 +1203,15 @@ function canUseRemoteSync() {
 }
 
 function getReviewApiUrl() {
+  return getApiUrl("review-state");
+}
+
+function getApiUrl(endpoint) {
   if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
-    return "https://dakota-english-learning-notes.netlify.app/api/review-state";
+    return `https://dakota-english-learning-notes.netlify.app/api/${endpoint}`;
   }
 
-  return "/api/review-state";
+  return `/api/${endpoint}`;
 }
 
 function mergeReviewStates(remoteState, localState) {
@@ -907,7 +1359,7 @@ function createClozeReviewCard(item, position, total) {
   submitBtn.style.fontWeight = "bold";
 
   inputContainer.append(inputEl, submitBtn);
-  front.append(progress, typeLabel, meaningQ, exampleQ, inputContainer);
+  front.append(progress, typeLabel, meaningQ, exampleQ, inputContainer, createEditButton(item.id));
 
   const back = document.createElement("div");
   back.className = "review-face review-back";
@@ -932,6 +1384,13 @@ function createClozeReviewCard(item, position, total) {
   note.className = "note";
   note.textContent = item.note_zh || "";
 
+  const reviewImage = item.image ? document.createElement("img") : null;
+  if (reviewImage) {
+    reviewImage.className = "review-image";
+    reviewImage.src = `${getImageUrl(item.id)}?v=${encodeURIComponent(item.image_updated_at || "1")}`;
+    reviewImage.alt = `${item.expression || "詞彙"} 的複習圖片`;
+  }
+
   const meta = document.createElement("p");
   meta.className = "review-card-meta";
   meta.textContent = `階段 ${review.stage ?? 0} · 下次複習 ${review.next_review || "未排程"}`;
@@ -951,8 +1410,11 @@ function createClozeReviewCard(item, position, total) {
   continueBtn.style.fontWeight = "bold";
   continueBtn.style.fontSize = "1rem";
 
-  actionContainer.append(continueBtn);
-  back.append(originalExp, originalMeaning, exampleBack, note, meta, actionContainer);
+  const editButton = createEditButton(item.id);
+  actionContainer.append(continueBtn, editButton);
+  back.append(originalExp, originalMeaning, exampleBack, note);
+  if (reviewImage) back.append(reviewImage);
+  back.append(meta, actionContainer);
   card.append(front, back);
 
   setTimeout(() => {

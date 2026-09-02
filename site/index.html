@@ -19,6 +19,23 @@
     </header>
 
     <main>
+      <section class="panel add-panel" aria-labelledby="addWordsTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Quick Add</p>
+            <h2 id="addWordsTitle">新增每日單字</h2>
+          </div>
+        </div>
+        <form id="addWordsForm" class="add-words-form">
+          <label for="addWordsInput">每行輸入一個單字或片語</label>
+          <textarea id="addWordsInput" rows="5" placeholder="每一行會建立一張新字卡" required></textarea>
+          <div class="form-footer">
+            <p id="addWordsStatus" class="form-status" aria-live="polite"></p>
+            <button type="submit" class="primary-btn">加入今天的單字</button>
+          </div>
+        </form>
+      </section>
+
       <section class="calendar-panel" aria-label="學習日曆">
         <div class="calendar-summary">
           <div>
@@ -177,6 +194,59 @@
       </section>
     </main>
 
+    <dialog id="editDialog" class="edit-dialog">
+      <form id="editForm" class="edit-form">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">Edit Card</p>
+            <h2>編輯字卡</h2>
+          </div>
+          <button type="button" id="closeEditBtn" class="icon-btn" aria-label="關閉編輯視窗">×</button>
+        </div>
+
+        <input id="editId" type="hidden">
+        <div class="edit-grid">
+          <label>單字或片語
+            <input id="editExpression" name="expression" required>
+          </label>
+          <label>類型
+            <input id="editType" name="type" placeholder="noun、phrase、collocation…">
+          </label>
+          <label class="wide-field">中文意思
+            <input id="editMeaning" name="meaning_zh">
+          </label>
+          <label class="wide-field">英文例句
+            <textarea id="editExample" name="example" rows="3"></textarea>
+          </label>
+          <label class="wide-field">用法補充
+            <textarea id="editNote" name="note_zh" rows="3"></textarea>
+          </label>
+          <label class="wide-field">標籤
+            <input id="editTags" name="tags" placeholder="以逗號分隔，例如 daily, academic">
+          </label>
+        </div>
+
+        <section class="image-editor" aria-labelledby="imageEditorTitle">
+          <div>
+            <h3 id="imageEditorTitle">複習圖片</h3>
+            <p>點一下下方區域，再直接貼上剪貼簿中的圖片。圖片只會顯示在今日待複習。</p>
+          </div>
+          <div id="imagePasteArea" class="image-paste-area" tabindex="0">點此後按下貼上</div>
+          <img id="imagePreview" class="image-preview is-hidden" alt="字卡圖片預覽">
+          <button type="button" id="removeImageBtn" class="secondary-btn is-hidden">移除圖片</button>
+        </section>
+
+        <p id="editStatus" class="form-status" aria-live="polite"></p>
+        <div class="dialog-actions">
+          <button type="button" id="deleteCardBtn" class="danger-btn">刪除字卡</button>
+          <div>
+            <button type="button" id="cancelEditBtn" class="secondary-btn">取消</button>
+            <button type="submit" class="primary-btn">儲存變更</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
     <template id="wordCardTemplate">
       <article class="word-card">
         <div class="word-topline">
@@ -203,6 +273,7 @@
           <button type="button" data-review-result="blurry">有點模糊</button>
           <button type="button" data-review-result="remembered">記得</button>
         </div>
+        <button type="button" class="card-edit-btn">編輯</button>
       </article>
     </template>
 
@@ -216,6 +287,7 @@
           <div class="library-meta">
             <span class="library-difficulty"></span>
             <span class="library-next-review"></span>
+            <button type="button" class="card-edit-btn library-edit-btn">編輯</button>
           </div>
         </div>
         <div class="library-detail is-hidden">
