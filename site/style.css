@@ -358,6 +358,10 @@ textarea {
   gap: 10px;
 }
 
+.dialog-actions-end {
+  justify-content: flex-end;
+}
+
 .form-status {
   min-height: 1.5em;
   color: var(--muted);
@@ -367,7 +371,6 @@ textarea {
 .primary-btn,
 .secondary-btn,
 .danger-btn,
-.card-edit-btn,
 .icon-btn {
   min-height: 42px;
   border: 1px solid transparent;
@@ -382,8 +385,12 @@ textarea {
   color: white;
 }
 
+button:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
 .secondary-btn,
-.card-edit-btn,
 .icon-btn {
   border-color: var(--line);
   background: var(--surface);
@@ -395,26 +402,54 @@ textarea {
   color: #991b1b;
 }
 
-.card-edit-btn {
-  width: 100%;
-  margin-top: 10px;
-}
-
-.review-front .card-edit-btn {
-  width: auto;
-  margin-top: 28px;
-}
-
-.library-edit-btn {
-  width: auto;
-  min-height: 32px;
-  margin: 0;
-  padding: 3px 9px;
-  font-size: 0.78rem;
-}
-
 .word-card {
+  position: relative;
   cursor: pointer;
+  padding-top: 48px;
+}
+
+.card-quick-actions {
+  display: flex;
+  position: absolute;
+  z-index: 8;
+  top: 10px;
+  right: 10px;
+  gap: 5px;
+}
+
+.card-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  min-height: 0;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px;
+}
+
+.card-icon-btn:hover {
+  border-color: #94a3b8;
+  color: var(--text);
+}
+
+.card-icon-delete:hover {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: var(--danger);
+}
+
+.card-icon-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .edit-dialog {
@@ -614,7 +649,7 @@ textarea {
   border: 1px solid var(--line);
   background: var(--surface);
   border-radius: 8px;
-  padding: 16px;
+  padding: 48px 16px 16px;
   box-shadow: var(--shadow);
 }
 
@@ -759,10 +794,11 @@ dd {
 }
 
 .library-item {
+  position: relative;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
-  padding: 12px 14px;
+  padding: 46px 14px 12px;
   cursor: pointer;
   transition: background-color 0.2s, box-shadow 0.2s;
 }
@@ -966,7 +1002,7 @@ select:focus {
 
   .word-card {
     min-height: 0;
-    padding: 18px;
+    padding: 48px 18px 18px;
   }
 
   .word-topline {

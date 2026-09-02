@@ -31,7 +31,7 @@
           <textarea id="addWordsInput" rows="5" placeholder="每一行會建立一張新字卡" required></textarea>
           <div class="form-footer">
             <p id="addWordsStatus" class="form-status" aria-live="polite"></p>
-            <button type="submit" class="primary-btn">加入今天的單字</button>
+            <button type="submit" id="addWordsSubmit" class="primary-btn">加入今天的單字</button>
           </div>
         </form>
       </section>
@@ -237,8 +237,7 @@
         </section>
 
         <p id="editStatus" class="form-status" aria-live="polite"></p>
-        <div class="dialog-actions">
-          <button type="button" id="deleteCardBtn" class="danger-btn">刪除字卡</button>
+        <div class="dialog-actions dialog-actions-end">
           <div>
             <button type="button" id="cancelEditBtn" class="secondary-btn">取消</button>
             <button type="submit" class="primary-btn">儲存變更</button>
@@ -273,7 +272,6 @@
           <button type="button" data-review-result="blurry">有點模糊</button>
           <button type="button" data-review-result="remembered">記得</button>
         </div>
-        <button type="button" class="card-edit-btn">編輯</button>
       </article>
     </template>
 
@@ -287,7 +285,6 @@
           <div class="library-meta">
             <span class="library-difficulty"></span>
             <span class="library-next-review"></span>
-            <button type="button" class="card-edit-btn library-edit-btn">編輯</button>
           </div>
         </div>
         <div class="library-detail is-hidden">

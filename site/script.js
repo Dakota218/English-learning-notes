@@ -2,6 +2,7 @@ const DATA_URL = "data/vocab.json";
 const REVIEW_API_URL = getReviewApiUrl();
 const VOCAB_API_URL = getApiUrl("vocab-data");
 const VOCAB_IMAGE_API_URL = getApiUrl("vocab-image");
+const CAMBRIDGE_API_URL = getApiUrl("cambridge-lookup");
 const STORAGE_KEY = "english-review-state-v1";
 const VOCAB_STORAGE_KEY = "english-vocab-data-v1";
 const DELETED_VOCAB_STORAGE_KEY = "english-vocab-deleted-ids-v1";
@@ -57,6 +58,7 @@ const els = {
   libraryTemplate: document.querySelector("#libraryItemTemplate"),
   addWordsForm: document.querySelector("#addWordsForm"),
   addWordsInput: document.querySelector("#addWordsInput"),
+  addWordsSubmit: document.querySelector("#addWordsSubmit"),
   addWordsStatus: document.querySelector("#addWordsStatus"),
   editDialog: document.querySelector("#editDialog"),
   editForm: document.querySelector("#editForm"),
@@ -71,7 +73,6 @@ const els = {
   imagePasteArea: document.querySelector("#imagePasteArea"),
   imagePreview: document.querySelector("#imagePreview"),
   removeImageBtn: document.querySelector("#removeImageBtn"),
-  deleteCardBtn: document.querySelector("#deleteCardBtn"),
   closeEditBtn: document.querySelector("#closeEditBtn"),
   cancelEditBtn: document.querySelector("#cancelEditBtn")
 };
@@ -83,7 +84,6 @@ els.addWordsForm.addEventListener("submit", addDailyWords);
 els.editForm.addEventListener("submit", saveCardEdits);
 els.imagePasteArea.addEventListener("paste", handleImagePaste);
 els.removeImageBtn.addEventListener("click", markImageForRemoval);
-els.deleteCardBtn.addEventListener("click", deleteCurrentCard);
 els.closeEditBtn.addEventListener("click", closeEditDialog);
 els.cancelEditBtn.addEventListener("click", closeEditDialog);
 els.editDialog.addEventListener("click", (event) => {
@@ -271,11 +271,7 @@ function createCard(item, options = {}) {
     actions.remove();
   }
 
-  const editButton = node.querySelector(".card-edit-btn");
-  editButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-    openEditDialog(item.id);
-  });
+  node.prepend(createCardActions(item.id));
   node.addEventListener("click", () => openEditDialog(item.id));
 
   return node;
@@ -299,7 +295,7 @@ function createReviewCard(item, position, total) {
   const expression = document.createElement("h3");
   expression.textContent = item.expression || "";
 
-  front.append(progress, expression, createEditButton(item.id));
+  front.append(progress, expression);
 
   const back = document.createElement("div");
   back.className = "review-face review-back";
@@ -335,12 +331,10 @@ function createReviewCard(item, position, total) {
     createReviewButton("記得", "remembered", item)
   );
 
-  const editButton = createEditButton(item.id);
-
   back.append(meaning, example, note);
   if (reviewImage) back.append(reviewImage);
-  back.append(meta, actions, editButton);
-  card.append(front, back);
+  back.append(meta, actions);
+  card.append(front, back, createCardActions(item.id));
 
   card.addEventListener("click", () => flipReviewCard(card));
   card.addEventListener("keydown", (event) => {
@@ -368,14 +362,28 @@ function createReviewButton(label, result, item) {
   return button;
 }
 
-function createEditButton(itemId) {
+function createCardActions(itemId) {
+  const actions = document.createElement("div");
+  actions.className = "card-quick-actions";
+  actions.append(
+    createIconButton("edit", "編輯字卡", () => openEditDialog(itemId)),
+    createIconButton("delete", "刪除字卡", () => deleteCard(itemId))
+  );
+  return actions;
+}
+
+function createIconButton(type, label, action) {
   const button = document.createElement("button");
   button.type = "button";
-  button.className = "card-edit-btn";
-  button.textContent = "編輯字卡";
+  button.className = `card-icon-btn card-icon-${type}`;
+  button.title = label;
+  button.setAttribute("aria-label", label);
+  button.innerHTML = type === "edit"
+    ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg>'
+    : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg>';
   button.addEventListener("click", (event) => {
     event.stopPropagation();
-    openEditDialog(itemId);
+    action();
   });
   return button;
 }
@@ -449,10 +457,7 @@ function createLibraryItem(item) {
     event.stopPropagation();
   });
 
-  node.querySelector(".card-edit-btn").addEventListener("click", (event) => {
-    event.stopPropagation();
-    openEditDialog(item.id);
-  });
+  node.prepend(createCardActions(item.id));
 
   return node;
 }
@@ -654,14 +659,47 @@ async function addDailyWords(event) {
     return;
   }
 
-  const newItems = uniqueInput.map((expression) => createNewVocabItem(expression, today));
+  els.addWordsStatus.textContent = `正在查詢 Cambridge（0 / ${uniqueInput.length}）…`;
+  els.addWordsSubmit.disabled = true;
+  const newItems = [];
+  const failed = [];
+  for (const [index, expression] of uniqueInput.entries()) {
+    els.addWordsStatus.textContent = `正在查詢 Cambridge（${index + 1} / ${uniqueInput.length}）：${expression}`;
+    const details = await lookupCambridge(expression);
+    if (details) {
+      newItems.push(createNewVocabItem(expression, today, details));
+    } else {
+      failed.push(expression);
+    }
+  }
+
+  if (newItems.length === 0) {
+    els.addWordsStatus.textContent = `Cambridge 查不到：${failed.join("、")}。請檢查拼字後再試一次。`;
+    els.addWordsSubmit.disabled = false;
+    return;
+  }
   vocab = [...newItems, ...vocab];
   render();
   els.addWordsStatus.textContent = "正在儲存…";
   const synced = await saveVocabData();
   els.addWordsInput.value = "";
   const skipped = expressions.length - uniqueInput.length;
-  els.addWordsStatus.textContent = `已新增 ${uniqueInput.length} 筆${skipped ? `，略過 ${skipped} 筆重複內容` : ""}${synced ? "。" : "；目前先保存在這台裝置。"}`;
+  const messages = [`已從 Cambridge 新增 ${newItems.length} 筆`];
+  if (skipped) messages.push(`略過 ${skipped} 筆重複內容`);
+  if (failed.length) messages.push(`查不到：${failed.join("、")}`);
+  els.addWordsStatus.textContent = `${messages.join("；")}${synced ? "。" : "；目前先保存在這台裝置。"}`;
+  els.addWordsSubmit.disabled = false;
+}
+
+async function lookupCambridge(expression) {
+  try {
+    const response = await fetch(`${CAMBRIDGE_API_URL}?q=${encodeURIComponent(expression)}`);
+    if (!response.ok) return null;
+    const payload = await response.json();
+    return payload.result || null;
+  } catch {
+    return null;
+  }
 }
 
 function parseExpressionLines(value) {
@@ -681,16 +719,17 @@ function normalizeExpression(value) {
     .replace(/[.!?]+$/g, "");
 }
 
-function createNewVocabItem(expression, date) {
+function createNewVocabItem(expression, date, details) {
   return {
     id: createUniqueId(date, expression),
     date,
     expression,
-    type: "expression",
-    meaning_zh: "",
-    example: "",
-    note_zh: "",
-    tags: ["daily"],
+    type: details.type || "expression",
+    meaning_zh: details.meaning_zh || "",
+    example: details.example || "",
+    note_zh: details.note_zh || "",
+    tags: Array.isArray(details.tags) ? details.tags : ["daily"],
+    source: details.source,
     review: {
       stage: 0,
       first_seen: date,
@@ -797,12 +836,9 @@ function parseTags(value) {
   )];
 }
 
-async function deleteCurrentCard() {
-  const itemId = els.editId.value;
+async function deleteCard(itemId) {
   const item = vocab.find((entry) => entry.id === itemId);
   if (!item || !confirm(`確定要刪除「${item.expression}」嗎？這個動作無法復原。`)) return;
-
-  els.editStatus.textContent = "正在刪除…";
   try {
     if (item.image) await removeCardImage(itemId);
     vocab = vocab.filter((entry) => entry.id !== itemId);
@@ -813,9 +849,8 @@ async function deleteCurrentCard() {
     await Promise.all([saveVocabData(), saveRemoteReviewState({ silent: true })]);
     reviewedThisSession.delete(itemId);
     render();
-    closeEditDialog();
   } catch (error) {
-    els.editStatus.textContent = error.message || "刪除失敗，請再試一次。";
+    setSyncStatus(error.message || "刪除失敗，請再試一次", "error");
   }
 }
 
@@ -1359,7 +1394,7 @@ function createClozeReviewCard(item, position, total) {
   submitBtn.style.fontWeight = "bold";
 
   inputContainer.append(inputEl, submitBtn);
-  front.append(progress, typeLabel, meaningQ, exampleQ, inputContainer, createEditButton(item.id));
+  front.append(progress, typeLabel, meaningQ, exampleQ, inputContainer);
 
   const back = document.createElement("div");
   back.className = "review-face review-back";
@@ -1410,12 +1445,11 @@ function createClozeReviewCard(item, position, total) {
   continueBtn.style.fontWeight = "bold";
   continueBtn.style.fontSize = "1rem";
 
-  const editButton = createEditButton(item.id);
-  actionContainer.append(continueBtn, editButton);
+  actionContainer.append(continueBtn);
   back.append(originalExp, originalMeaning, exampleBack, note);
   if (reviewImage) back.append(reviewImage);
   back.append(meta, actionContainer);
-  card.append(front, back);
+  card.append(front, back, createCardActions(item.id));
 
   setTimeout(() => {
     inputEl.focus();
