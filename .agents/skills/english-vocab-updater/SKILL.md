@@ -23,7 +23,7 @@ The project has three synchronized surfaces:
    - `backups/English_Learning_Notes_YYYY-MM-DD_HHMM.docx`
    - `backups/vocab_YYYY-MM-DD_HHMM.json`
 7. Update `English_Learning_Notes.docx` by appending to today's date section if it exists; otherwise create one. Do not delete old notes.
-8. Update `data/vocab.json`, avoiding duplicate entries with the same date and normalized expression.
+8. Before adding anything, compare each normalized expression against the entire existing vocabulary. If it already exists on any date, skip it; add only expressions that are not already in the vocabulary. Apply the same decision to Word and JSON so they stay synchronized.
 9. If `site/data/vocab.json` exists or the website reads from it, synchronize it from `data/vocab.json`.
 10. Make only small site changes unless the user explicitly asks for a redesign.
 11. Validate JSON parsing and check that the data copies match.
@@ -66,7 +66,7 @@ Generate `id` as `YYYY-MM-DD-expression-slug`:
 - Remove punctuation and special symbols.
 - If the id already exists, append `-2`, `-3`, and so on.
 
-Treat an entry as a duplicate when it has the same date and the same normalized expression:
+Treat an entry as a duplicate when the same normalized expression exists anywhere in the vocabulary, regardless of its date:
 - Lowercase.
 - Trim leading/trailing whitespace.
 - Collapse repeated spaces.
@@ -158,7 +158,7 @@ After edits:
 - Parse `data/vocab.json`.
 - Parse `site/data/vocab.json` when present.
 - Confirm `data/vocab.json` and `site/data/vocab.json` are synchronized when both are intended to exist.
-- Check for duplicate same-date same-expression entries.
+- Check for duplicate normalized expressions across the entire vocabulary, regardless of date.
 - Do not deploy if JSON parsing fails or the site cannot read its data.
 
 For JSON checks, use a parser such as:

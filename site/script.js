@@ -642,7 +642,6 @@ async function addDailyWords(event) {
   const today = todayISO();
   const existing = new Set(
     vocab
-      .filter((item) => item.date === today)
       .map((item) => normalizeExpression(item.expression))
   );
   const uniqueInput = [];
@@ -656,7 +655,7 @@ async function addDailyWords(event) {
   }
 
   if (uniqueInput.length === 0) {
-    els.addWordsStatus.textContent = expressions.length ? "今天已經有相同的單字。" : "請至少輸入一個單字或片語。";
+    els.addWordsStatus.textContent = expressions.length ? "詞庫裡已經有相同的單字或片語。" : "請至少輸入一個單字或片語。";
     return;
   }
 
