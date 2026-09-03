@@ -131,6 +131,7 @@ async function init() {
     vocab = await loadVocabData(loadedVocab);
     await syncInitialReviewState();
     render();
+    refreshLegacyDictionaryNotes();
   } catch (error) {
     renderError(error);
   }
@@ -659,12 +660,12 @@ async function addDailyWords(event) {
     return;
   }
 
-  els.addWordsStatus.textContent = `正在查詢 Cambridge（0 / ${uniqueInput.length}）…`;
+  els.addWordsStatus.textContent = `正在查詢可靠詞典（0 / ${uniqueInput.length}）…`;
   els.addWordsSubmit.disabled = true;
   const newItems = [];
   const failed = [];
   for (const [index, expression] of uniqueInput.entries()) {
-    els.addWordsStatus.textContent = `正在查詢 Cambridge（${index + 1} / ${uniqueInput.length}）：${expression}`;
+    els.addWordsStatus.textContent = `正在查詢可靠詞典（${index + 1} / ${uniqueInput.length}）：${expression}`;
     const details = await lookupCambridge(expression);
     if (details) {
       newItems.push(createNewVocabItem(expression, today, details));
@@ -674,7 +675,7 @@ async function addDailyWords(event) {
   }
 
   if (newItems.length === 0) {
-    els.addWordsStatus.textContent = `Cambridge 查不到：${failed.join("、")}。請檢查拼字後再試一次。`;
+    els.addWordsStatus.textContent = `找不到可靠來源：${failed.join("、")}。請檢查拼字後再試一次。`;
     els.addWordsSubmit.disabled = false;
     return;
   }
@@ -684,7 +685,7 @@ async function addDailyWords(event) {
   const synced = await saveVocabData();
   els.addWordsInput.value = "";
   const skipped = expressions.length - uniqueInput.length;
-  const messages = [`已從 Cambridge 新增 ${newItems.length} 筆`];
+  const messages = [`已查證並新增 ${newItems.length} 筆`];
   if (skipped) messages.push(`略過 ${skipped} 筆重複內容`);
   if (failed.length) messages.push(`查不到：${failed.join("、")}`);
   els.addWordsStatus.textContent = `${messages.join("；")}${synced ? "。" : "；目前先保存在這台裝置。"}`;
@@ -699,6 +700,29 @@ async function lookupCambridge(expression) {
     return payload.result || null;
   } catch {
     return null;
+  }
+}
+
+async function refreshLegacyDictionaryNotes() {
+  const legacyItems = vocab.filter((item) =>
+    item.source?.name?.startsWith("Cambridge Dictionary")
+    && /^Cambridge\s*定義[：:]/.test(item.note_zh || "")
+  );
+  if (legacyItems.length === 0) return;
+
+  let changed = false;
+  for (const item of legacyItems) {
+    const details = await lookupCambridge(item.expression);
+    if (!details?.note_zh) continue;
+    const index = vocab.findIndex((entry) => entry.id === item.id);
+    if (index < 0) continue;
+    vocab[index] = { ...vocab[index], note_zh: details.note_zh, source: details.source || vocab[index].source };
+    changed = true;
+  }
+
+  if (changed) {
+    await saveVocabData({ silent: true });
+    render();
   }
 }
 
