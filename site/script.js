@@ -636,7 +636,7 @@ async function fetchWithSyncKey(url, options = {}, retry = true) {
 
 async function addDailyWords(event) {
   event.preventDefault();
-  const expressions = parseExpressionLines(els.addWordsInput.value);
+  const entries = parseExpressionLines(els.addWordsInput.value);
   const today = todayISO();
   const existing = new Set(
     vocab
@@ -644,16 +644,16 @@ async function addDailyWords(event) {
   );
   const uniqueInput = [];
 
-  for (const expression of expressions) {
-    const normalized = normalizeExpression(expression);
+  for (const entry of entries) {
+    const normalized = normalizeExpression(entry.expression);
     if (normalized && !existing.has(normalized)) {
       existing.add(normalized);
-      uniqueInput.push(expression);
+      uniqueInput.push(entry);
     }
   }
 
   if (uniqueInput.length === 0) {
-    els.addWordsStatus.textContent = expressions.length ? "詞庫裡已經有相同的單字或片語。" : "請至少輸入一個單字或片語。";
+    els.addWordsStatus.textContent = entries.length ? "詞庫裡已經有相同的單字或片語。" : "請至少輸入一個單字或片語。";
     return;
   }
 
@@ -661,10 +661,12 @@ async function addDailyWords(event) {
   els.addWordsSubmit.disabled = true;
   const newItems = [];
   const failed = [];
-  for (const [index, expression] of uniqueInput.entries()) {
+  for (const [index, entry] of uniqueInput.entries()) {
+    const { expression, exampleHint } = entry;
     els.addWordsStatus.textContent = `正在查詢可靠詞典（${index + 1} / ${uniqueInput.length}）：${expression}`;
     const details = await lookupCambridge(expression);
     if (details) {
+      if (exampleHint) details.example = completeExampleHint(exampleHint);
       newItems.push(createNewVocabItem(expression, today, details));
     } else {
       failed.push(expression);
@@ -681,7 +683,7 @@ async function addDailyWords(event) {
   els.addWordsStatus.textContent = "正在儲存…";
   const synced = await saveVocabData();
   els.addWordsInput.value = "";
-  const skipped = expressions.length - uniqueInput.length;
+  const skipped = entries.length - uniqueInput.length;
   const messages = [`已查證並新增 ${newItems.length} 筆`];
   if (skipped) messages.push(`略過 ${skipped} 筆重複內容`);
   if (failed.length) messages.push(`查不到：${failed.join("、")}`);
@@ -729,7 +731,23 @@ function parseExpressionLines(value) {
     .replace(/&(?:#x20|#32|nbsp);/gi, " ")
     .split(/\r?\n/)
     .map((line) => line.replace(/\s+/g, " ").trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .map((line) => {
+      const separatorIndex = line.search(/[:：]/);
+      if (separatorIndex < 0) return { expression: line, exampleHint: "" };
+
+      const expression = line.slice(0, separatorIndex).trim();
+      const exampleHint = line.slice(separatorIndex + 1).trim();
+      return { expression, exampleHint };
+    })
+    .filter(({ expression }) => Boolean(expression));
+}
+
+function completeExampleHint(value) {
+  const sentence = String(value || "").replace(/\s+/g, " ").trim();
+  if (!sentence) return "";
+  const capitalized = sentence.replace(/^([a-z])/, (letter) => letter.toUpperCase());
+  return /[.!?]$/.test(capitalized) ? capitalized : `${capitalized}.`;
 }
 
 function normalizeExpression(value) {

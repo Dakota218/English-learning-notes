@@ -18,6 +18,7 @@ The project has three synchronized surfaces:
 2. Inspect existing files before editing: Word notes, `data/vocab.json`, `site/`, and `site/data/vocab.json`.
 3. Read the existing JSON shape and preserve it. Prefer the existing field names and array/object structure.
 4. Parse the user's English input into clean learning items. Correct obvious spelling, grammar, or usage mistakes and mention important corrections in the final report.
+   - When an input line uses `expression : sentence fragment` (ASCII `:` or full-width `：`), treat only the text before the first colon as the expression. Use the text after the colon as the basis for a natural, complete example sentence; do not store the whole line as the expression.
 5. Add missing `meaning_zh`, `type`, `example`, `note_zh`, and `tags` when the user did not provide them. The vocabulary details MUST be retrieved from the Cambridge Dictionary (via web search) or directly from the user prompt. If the Cambridge Dictionary does not contain the word, search other authoritative dictionaries (e.g., Merriam-Webster, Oxford). Avoid pure LLM hallucinations.
 6. Before changing Word or JSON, create backups when the files already exist and the change is not trivial:
    - `backups/English_Learning_Notes_YYYY-MM-DD_HHMM.docx`
