@@ -296,7 +296,15 @@ function createReviewCard(item, position, total) {
   const expression = document.createElement("h3");
   expression.textContent = item.expression || "";
 
+  const reviewImage = item.image ? document.createElement("img") : null;
+  if (reviewImage) {
+    reviewImage.className = "review-image";
+    reviewImage.src = `${getImageUrl(item.id)}?v=${encodeURIComponent(item.image_updated_at || "1")}`;
+    reviewImage.alt = `${item.expression || "詞彙"} 的複習圖片`;
+  }
+
   front.append(progress, expression);
+  if (reviewImage) front.append(reviewImage);
 
   const back = document.createElement("div");
   back.className = "review-face review-back";
@@ -313,13 +321,6 @@ function createReviewCard(item, position, total) {
   note.className = "note";
   note.textContent = item.note_zh || "";
 
-  const reviewImage = item.image ? document.createElement("img") : null;
-  if (reviewImage) {
-    reviewImage.className = "review-image";
-    reviewImage.src = `${getImageUrl(item.id)}?v=${encodeURIComponent(item.image_updated_at || "1")}`;
-    reviewImage.alt = `${item.expression || "詞彙"} 的複習圖片`;
-  }
-
   const meta = document.createElement("p");
   meta.className = "review-card-meta";
   meta.textContent = `階段 ${review.stage ?? 0} · 下次複習 ${review.next_review || "未排程"}`;
@@ -333,7 +334,6 @@ function createReviewCard(item, position, total) {
   );
 
   back.append(meaning, example, note);
-  if (reviewImage) back.append(reviewImage);
   back.append(meta, actions);
   card.append(front, back, createCardActions(item.id));
 
@@ -390,10 +390,8 @@ function createIconButton(type, label, action) {
 }
 
 function flipReviewCard(card) {
-  if (card.classList.contains("is-flipped")) return;
-
-  card.classList.add("is-flipped");
-  card.setAttribute("aria-label", "複習卡片背面");
+  const isFlipped = card.classList.toggle("is-flipped");
+  card.setAttribute("aria-label", isFlipped ? "複習卡片背面；點擊返回正面" : "翻開複習卡片");
 }
 
 function createLibraryItem(item) {
@@ -1417,7 +1415,6 @@ function createClozeReviewCard(item, position, total) {
   submitBtn.style.fontWeight = "bold";
 
   inputContainer.append(inputEl, submitBtn);
-  front.append(progress, typeLabel, meaningQ, exampleQ, inputContainer);
 
   const back = document.createElement("div");
   back.className = "review-face review-back";
@@ -1449,6 +1446,10 @@ function createClozeReviewCard(item, position, total) {
     reviewImage.alt = `${item.expression || "詞彙"} 的複習圖片`;
   }
 
+  front.append(progress, typeLabel, meaningQ, exampleQ);
+  if (reviewImage) front.append(reviewImage);
+  front.append(inputContainer);
+
   const meta = document.createElement("p");
   meta.className = "review-card-meta";
   meta.textContent = `階段 ${review.stage ?? 0} · 下次複習 ${review.next_review || "未排程"}`;
@@ -1470,7 +1471,6 @@ function createClozeReviewCard(item, position, total) {
 
   actionContainer.append(continueBtn);
   back.append(originalExp, originalMeaning, exampleBack, note);
-  if (reviewImage) back.append(reviewImage);
   back.append(meta, actionContainer);
   card.append(front, back, createCardActions(item.id));
 
@@ -1517,6 +1517,10 @@ function createClozeReviewCard(item, position, total) {
       e.stopPropagation();
       handleCheck();
     }
+  });
+
+  card.addEventListener("click", () => {
+    if (card.classList.contains("is-flipped")) flipReviewCard(card);
   });
 
   return card;
