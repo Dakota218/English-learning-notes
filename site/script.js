@@ -662,11 +662,12 @@ async function addDailyWords(event) {
   const newItems = [];
   const failed = [];
   for (const [index, entry] of uniqueInput.entries()) {
-    const { expression, exampleHint, isCompleteExpression } = entry;
+    const { expression, exampleHint, meaningHint, isCompleteExpression } = entry;
     els.addWordsStatus.textContent = `正在查詢可靠詞典（${index + 1} / ${uniqueInput.length}）：${expression}`;
     const lookupExpression = isCompleteExpression ? expression.replace(/[.。]+$/, "") : expression;
     const details = await lookupCambridge(lookupExpression);
     if (details) {
+      if (meaningHint) details.meaning_zh = meaningHint;
       if (isCompleteExpression) {
         details.example = completeExampleHint(expression);
         details.type = "spoken expression";
@@ -741,13 +742,17 @@ function parseExpressionLines(value) {
     .filter(Boolean)
     .map((line) => {
       const separatorIndex = line.search(/[:：]/);
-      const expression = (separatorIndex < 0 ? line : line.slice(0, separatorIndex)).trim();
+      const rawExpression = (separatorIndex < 0 ? line : line.slice(0, separatorIndex)).trim();
       const exampleHint = separatorIndex < 0 ? "" : line.slice(separatorIndex + 1).trim();
+      const meaningMatch = rawExpression.match(/^(.*?)\s*[（(]([^()（）]+)[）)]\s*$/);
+      const expression = (meaningMatch ? meaningMatch[1] : rawExpression).trim();
+      const meaningHint = meaningMatch ? meaningMatch[2].trim() : "";
       const isCompleteExpression = /[.。]$/.test(expression);
 
       return {
         expression: isCompleteExpression ? completeExampleHint(expression) : expression,
         exampleHint,
+        meaningHint,
         isCompleteExpression
       };
     })
