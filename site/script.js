@@ -662,11 +662,18 @@ async function addDailyWords(event) {
   const newItems = [];
   const failed = [];
   for (const [index, entry] of uniqueInput.entries()) {
-    const { expression, exampleHint } = entry;
+    const { expression, exampleHint, isCompleteExpression } = entry;
     els.addWordsStatus.textContent = `正在查詢可靠詞典（${index + 1} / ${uniqueInput.length}）：${expression}`;
-    const details = await lookupCambridge(expression);
+    const lookupExpression = isCompleteExpression ? expression.replace(/[.。]+$/, "") : expression;
+    const details = await lookupCambridge(lookupExpression);
     if (details) {
-      if (exampleHint) details.example = completeExampleHint(exampleHint);
+      if (isCompleteExpression) {
+        details.example = completeExampleHint(expression);
+        details.type = "spoken expression";
+        details.tags = [...new Set([...(details.tags || []), "conversation", "useful-expression"])];
+      } else if (exampleHint) {
+        details.example = completeExampleHint(exampleHint);
+      }
       newItems.push(createNewVocabItem(expression, today, details));
     } else {
       failed.push(expression);
@@ -734,17 +741,21 @@ function parseExpressionLines(value) {
     .filter(Boolean)
     .map((line) => {
       const separatorIndex = line.search(/[:：]/);
-      if (separatorIndex < 0) return { expression: line, exampleHint: "" };
+      const expression = (separatorIndex < 0 ? line : line.slice(0, separatorIndex)).trim();
+      const exampleHint = separatorIndex < 0 ? "" : line.slice(separatorIndex + 1).trim();
+      const isCompleteExpression = /[.。]$/.test(expression);
 
-      const expression = line.slice(0, separatorIndex).trim();
-      const exampleHint = line.slice(separatorIndex + 1).trim();
-      return { expression, exampleHint };
+      return {
+        expression: isCompleteExpression ? completeExampleHint(expression) : expression,
+        exampleHint,
+        isCompleteExpression
+      };
     })
     .filter(({ expression }) => Boolean(expression));
 }
 
 function completeExampleHint(value) {
-  const sentence = String(value || "").replace(/\s+/g, " ").trim();
+  const sentence = String(value || "").replace(/\s+/g, " ").trim().replace(/。$/, ".");
   if (!sentence) return "";
   const capitalized = sentence.replace(/^([a-z])/, (letter) => letter.toUpperCase());
   return /[.!?]$/.test(capitalized) ? capitalized : `${capitalized}.`;
